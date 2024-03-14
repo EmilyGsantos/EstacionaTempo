@@ -18,50 +18,101 @@
    header('Location: cadEquipe.php');
   }// fim do if cadastrar
 
+  /*<form method="POST" action="cadAdm.php">
+   <input type="submit" name="submitAdm" id="submitAdm">  
+   
+  
+  
+  */ 
+
    
 ?>
+
+<!--Formulário Adm--->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastrar ADM</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>CadastroADM</title>
 </head>
+
 <body>
+    <div class="container">
+        <div class="form-image">
+            <img src="/NovoPHPEstacionamento/FormularioCadLog/Formulario-main/assets/img/Rectangle 82.png" alt="">
+        </div>
+        <div class="form">
+            <form method="POST" action="cadAdm.php">
+                <div class="form-header">
+                    
+                    <div class="title">
+                        <h1>Cadastro ADM</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="/NovoPHPEstacionamento/IndexTELAum/Login/index.html">Voltar a Home</a></button>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="/NovoPHPEstacionamento/FormularioCadLog/Formulario-main/loginIndexADM.html">Login</a></button>
+                    </div>
+                   
+                </div>
 
-    <form method="POST" action="cadAdm.php">
-            
-            <h1>Cadastro ADM</h1>
-            
-        <label for="nome">Nome:</label>
-        <input label type="text" id="nomeADM" name="nomeADM" required><br><br>
+                <div class="input-group">  
+                    
+                    <div class="input-box">
+                        <label for="car">Nome</label>
+                        <input  type="text" name="nomeADM" id="nomeADM" placeholder="Informe seu nome" required>
+                    </div>
 
-        <label for="CPF">CPF</label>
-        <input label type="text" id="cpfADM" name="cpfADM" required><br><br>
+                    <div class="input-box">
+                        <label for="car">CPF</label>
+                        <input  type="text" name="cpfADM" id="cpfADM" placeholder="Informe seu CPF" required>
+                    </div>
 
-        <label for="Idade">Idade:</label>
-        <input label type="text" id="idadeADM" name="idadeADM" required><br><br>
+                    <div class="input-box">
+                        <label for="car">Idade</label>
+                        <input  type="text" name="idadeADM" id="idadeADM" placeholder="Informe sua idade " required>
+                    </div>
 
-        <label for="Telefone">Telefone:</label>
-        <input label type="text" id="telefoneADM" name="telefoneADM" required><br><br>
-
-
-        <label for="email">Email:</label>
-        <input label type="text" id="emailADM" name="emailADM" required><br><br>
-
-        <label for="Senha">Senha</label>
-        <input label type="text" id="senhaADM" name="senhaADM" required><br><br>
-
-        <label><b>Deseja Possuir uma vaga?</b></label>
-        <input type="checkbox" name="possuir_vaga" id="possuir_vaga" value="1" > Sim </input>
-        <input type="checkbox" name="possuir_vaga" id="possuir_vaga" value="0" > Não</input><br><br>
-
-        <input type="submit" name="submitAdm" id="submitAdm">    
-    </form>
+                    <div class="input-box">
+                        <label for="car">Celular</label>
+                        <input  type="tel" name="telefoneADM" id="telefoneADM" placeholder="(11) 999999" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input  type="email" name="emailADM" id="emailADM" placeholder="Digite seu e-mail" required>
+                    </div>
 
 
-    
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input  type="password" name="senhaADM" id="senhaADM" placeholder="Digite sua senha" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input  type="password" name="senhaADM" id="senhaADM" placeholder="Digite sua senha novamente" required>
+                    </div>
+                    
+
+                    <label><b>Deseja Possuir uma vaga?</b></label>
+                        <input type="checkbox" name="possuir_vaga" id="possuir_vaga" value="1" > Sim </input>
+                        <input type="checkbox" name="possuir_vaga" id="possuir_vaga" value="0" > Não</input><br><br>
+             </div>
+
+                
+                <div class="continue-button">
+                    <button><input type="submit" name="submitAdm" id="submitAdm"> </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
-</html>
 
+</html>

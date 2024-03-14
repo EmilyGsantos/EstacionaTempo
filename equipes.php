@@ -32,7 +32,7 @@
                           <a/>
                       </td>";
             echo "<tr>";
-          }
+          }// fim do while 
         ?>
     </tbody> 
 </body>

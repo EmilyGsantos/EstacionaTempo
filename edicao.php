@@ -32,52 +32,72 @@
     {
       header('Location: sistema.php');
     }// fim do if 
-
-
-  
-  
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulario</title>
-</head>
-<body>
-    <form method="POST" action='save.php'>
 
-    <label for="nome">Nome:</label>
-            <input label type="text" id="nome" name="nome" value="<?php echo $nome?>" required><br><br><!--Passando o dado para o formulário-->
 
-            <label for="CPF">CPF</label>
-            <input label type="text" id="cpf" name="cpf"  value="<?php echo $cpf?>" required><br><br>
+<!--Dados do Usuário  cadastrado para mandar p o atualizar-->
 
-            <label for="Idade">Idade:</label>
-            <input label type="text" id="idade" name="idade" value="<?php echo $idade?>" required><br><br>
+<form method="POST" action="save.php">
+    <div class="input-group">
+        <div class="input-box">
+            <label for="firstname">Nome</label>
+            <input  type="text" id="nome" name="nome" value="<?php echo $nome?>" required><!--Passando o dado cadstrado para o formulário-->
+        </div>
 
-            <label for="Telefone">Telefone:</label>
-            <input label type="text" id="telefone" name="telefone" value="<?php echo $telefone?>" required><br><br>
+        <div class="input-box">
+                <label for="number">Celular</label>
+                <input  type="tel" id="telefone" name="telefone" value="<?php echo $telefone?>" required>
+            </div> 
 
-            <label for="cor">Cor do veiculo:</label>
-            <input label type="text" id="cor" name="cor" value="<?php echo $cor?>" required><br><br>
+            <div class="input-box">
+            <label for="number">CPF</label>
+                <input  type="text"  id="cpf" name="cpf" value="<?php echo $cpf?>"   required>
+            </div>
 
-            <label for="Placa">Placa:</label>
-            <input label type="text" id="placa" name="placa" value="<?php echo $placa?>" required><br><br>
+            <div class="input-box">
+            <label for="number">Idade</label>
+            <input  type="text" name="idade" id="idade" value="<?php echo $idade?>" required>
+            </div>
 
-            <label for="Prioridades">Prioridades:</label>
-            <input label type="text" id="prioridades" name="prioridades" required><br><br>
+            <div class="input-box">
+            <label for="email">E-mail</label>
+            <input  type="email"  id="email" name="email"  value="<?php echo $email?>"  required>
+        </div>
+    
+            <div class="input-box">
+            <label for="password">Senha</label>
+                <input type="password" id="senha" name="senha" value="<?php echo $senha?>"  required>
+            </div>
 
-            <label for="email">Email:</label>
-            <input label type="text" id="email" name="email" value="<?php echo $email?>" required><br><br>
+       
+               
+            <!--Arrumar-->
+        <div class="input-box">
+                <label for="car">Tipo do veiculo </label>
+                <select id="veiculo" name="veiculo" value="<?php echo $veiculo?>">
+                    <option value="car">Carro</option>
+                    <option value="moto">Moto</option>
+                    <option value="outro">Outro</option>
+                </select><br>
+        </div>
+                        
 
-            <label for="Senha">Senha</label>
-            <input label type="text" id="senha" name="senha" value="<?php echo $senha?>" required><br><br>
-            <input type="hidden" name="id" value="<?php echo $id ?>">
-          
+        <div class="input-box">
+            <label for="car">Cor do veiculo</label>
+            <input  type="text" id="cor" name="cor"  value="<?php echo $cor?>" required>
+        </div>
+
+        <div class="input-box">
+            <label for="car">Placa do veiculo</label>
+            <input  type="text" id="placa" name="placa"  value="<?php echo $placa?>"  required>
+        </div>
+
+            <div class="input-box">
+            <label for="car">Prioridade</label>
+                <input  type="text"  id="prioridades" name="prioridades" value="<?php echo $prioridade?>"  required>
+        </div>
+        <input type="hidden" name="id" value="<?php echo $id ?>"><!--Passando o Id do usuário de forma escondida--->
+
         <input type="submit" name="update" id="update">
-        
-    </form>
-
-</body>
-</html>
+    </div>
+</form>

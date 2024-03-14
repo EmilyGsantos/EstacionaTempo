@@ -3,10 +3,6 @@
  session_start();
  include_once('dao.php'); 
 
- 
- 
-
-
  // Criação de  EQUIPE ////
  if(isset($_POST['criaequipe'])){
             
@@ -18,27 +14,71 @@
 
     header('Location: login.php');
     }// fim do if cadastrarEquipe
-
-  
-   
+    
 ?>
 
 <!--Formuário Equipes-->
-<form method="POST" action="cadEquipe.php">
-        <label>Nome da Equipe:</label>
-        <input label type="text" id="nome_equipe" name="nome_equipe" required><br><br>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-        <label >Quantidade de vagas</label>
-        <input label type="text" id="qntvaga" name="qntvaga" required><br><br>
-      
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>CadastroAdm</title>
+</head>
 
-        <label >Quantidade de vagas Fixas Parciais</label>
-        <input label type="text" id="qntParciais" name="qntParciais" required><br><br>
-        <br>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img//Rectangle 82.png" alt="">
+        </div>
+        <div class="form">
+            <form method="POST" action="cadEquipe.php">
+                <div class="form-header">
+                    
+                    <div class="title">
+                        <h1>Crie sua equipe</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="/NovoPHPEstacionamento/IndexTELAum/Login/index.html">Voltar a Home</a></button>
+                    </div>
+                   
+                </div>
+                
+                <div class="input-group">
+                    
+                    
+                    <div class="input-box">
+                        <label for="car">Nome da equipe</label>
+                        <input  type="text" name="nome_equipe" id="nome_equipe" placeholder="Crie um nome para sua equipe" required>
+                    </div>
 
-        <input type="submit" name="criaequipe" id="criaequipe">
-    </form>
+                    <div class="input-box">
+                        <label for="car">Numero de vagas do estacionamento</label>
+                        <input  type="text" name="qntvaga" id="qntvaga" placeholder="Digite a quantidade" required>
+                    </div>
+                </div>
+                
 
+                <div class="input-box">
+                        <label for="car">Numero de vagas Fixas Parciais</label>
+                        <input  type="text" name="qntParciais" id="qntParciais" placeholder="Digite a quantidade de vagas fixas" required>
+                    </div>
+                </div>
+                
+
+                <div class="continue-button">
+                    <button> <input type="submit" name="criaequipe" id="criaequipe">Continuar</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+     
  
 
  

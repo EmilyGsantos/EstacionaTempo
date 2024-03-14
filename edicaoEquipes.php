@@ -19,32 +19,31 @@
               }// fim do while
 
             } // fim do while
-    }
-    ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
+    }// fim do if Editar equipe
+  ?>
 
-    <form method="POST" action="saveE.php">
-            <label>Nome da Equipe:</label>
-            <input label type="text" id="nome_equipe" name="nome_equipe" value="<?php echo $nomeequipe ?>" ><br><br>
+<!--Formulario  da Equipe p/ salvar os dados -->
+ <div class="form">
+      <form method="POST" action="cadEquipe.php">
+        <div class="input-group">
+                <div class="input-box">
+                  <label for="car">Nome da equipe</label>
+                    <input  type="text" id="nome_equipe" name="nome_equipe" value="<?php echo $nomeequipe ?>" >
+                </div>
 
-            <label >Quantidade de vagas</label>
-            <input label type="text" id="qntvaga" name="qntvaga" value="<?php echo  $qntvagas?>" ><br><br>
-            
-            <label >Quantidade de vagas Fixas Parciais</label>
-            <input label type="text" id="qntParciais" name="qntParciais" value="<?php echo  $qntParciais ?>" ><br><br>
+                <div class="input-box">
+                  <label for="car">Numero de vagas do estacionamento</label>
+                  <input  type="text" id="qntvaga" name="qntvaga" value="<?php echo  $qntvagas?>" >
+                </div>
+            </div>
 
+              <div class="input-box">
+                <label for="car">Numero de vagas Fixas Parciais</label>
+                <input  type="text" name="qntParciais" id="qntParciais" value="<?php echo  $qntParciais ?>" >
+            </div>
             <input type="hidden" name="id" value="<?php echo $id ?>"></input> 
-            <br>
-            <input type="submit" name="updateEquipe" id="updateEquipe">
-
-  </form>
-    </body>
-    </html>
+        </div>
+        <input type="submit" name="updateEquipe" id="updateEquipe">
+    </form>
+ </div>
+ 
