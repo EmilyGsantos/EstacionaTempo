@@ -1,44 +1,11 @@
-<?php
- session_start();
-    //verificando se email e senha estao no banco de dados
-
-    //SEGURANÇA:impede que o usuario acesse por meio da url o teste login caso nao haja variavel .
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']))
-    {
-      include_once('DAO/dao.php');
-      $email = $_POST['email'];
-      $senha = $_POST['senha'];
-
-      $sql = "SELECT FROM Usuario Where email == $email and senha == $senha"; //verficando se os dados são os msm que estão no banco 
-      $resultlogin = $conexao->query($sql);
-
-        //verificando se os dados existem 
-        if(mysqli_num_rows($resultlogin) < 1)
-        {   // se nao existir os dados vão ser apagados e redirecionados para o login msm
-            unset($_SESSION ['email']);
-            unset($_SESSION ['senha']);
-          echo "este usuario não existe";
-        }else{
-            //caso exista vai entrar no sistema 
-            $_SESSION['email'] = $email;
-            $_SESSION['senha'] = $senha;
-            header('Location: sistema.php');
-
-        }
-    }// fim do if login
-?>
-
-
-<!--Formulátrio de Login-->
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/NovoPHPEstacionamento/FormularioCadLog/Formulario-main/assets/css/style.css">
-    <title>Login </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/NovoPHPEstacionamento/sidebar-main-ADM/src/css/style.css">
+    <title>Reservar Vaga Administrador</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -70,7 +37,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #325573;
+    background-color: #F2911B;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
@@ -101,7 +68,6 @@ main {
 #user_infos {
     display: flex;
     flex-direction: column;
-    color: #ccc;
 }
 
 img {
@@ -122,12 +88,9 @@ img {
 .imagem-2 {
     align-self: end;
 }
-.ImgIndex{
-    width: 200px;
-    height: 200px;
-}
+
 #user_infos span:last-child {
-    color: #ffffff;
+    color: #6b6b6b;
     font-size: 12px;
 }
 
@@ -156,7 +119,7 @@ img {
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #F2911B;
+    background-color: #e3e9f7;
 }
 
 .side-item a {
@@ -164,7 +127,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #0a0a0a;
 }
 
 .side-item.active a {
@@ -184,7 +147,7 @@ img {
     flex-direction: column;
     gap: 8px;
     list-style: none;
-    border-top: 1px solid #061f58;
+    border-top: 1px solid #e3e9f7;
     padding: 5px;
 }
 
@@ -198,7 +161,7 @@ img {
     border-radius: 8px;
     text-align: start;
     cursor: pointer;
-    background-color: #fafafa;
+    background-color: transparent;
 }
 
 #open_btn {
@@ -278,7 +241,7 @@ img {
 .cabecalho {
     background-color: none;
     /*definindo cor de fundo*/
-    width: 1325px;
+    width: 1525px;
     height: 100px;
     /*definindo altura*/
     display: flex;
@@ -290,7 +253,7 @@ img {
     border-radius: 10px;
     BOX-shadow: 0 0 15px #f827ff, inset 0 0 15px #f827ff;
     text-shadow: 0 0 15px #f827ff;
-
+    padding-top: 90px;
 }
 
 
@@ -429,12 +392,11 @@ form {
 
 .conteudo {
     width: 400px;
-    height: 700px;
-    border: 3px solid rgb(255, 255, 255);
+    height: 500px;
+    border: 1px solid black;
     margin-top: 5px;
     padding: 10px;
-    background-color: transparent;
-    
+    background-color: lightgreen;
 }
 
 .conteudoB {
@@ -615,8 +577,8 @@ blockquote {
     margin-top: 30px;
 }
 
-@media screen and (max-width: 1064px) {
-    .container {
+@media screen and (max-width: 1094px) {
+    .sidebar_content {
         width: 90%;
         height: auto;
     }
@@ -668,155 +630,175 @@ blockquote {
     font-weight: 500;
     color: #fff;
 }
-.divSearch {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-
-.col-wideFormReserva {
-    display: grid;
-    max-width: 500px;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
-    padding-left: 90px;
-    max-height: fit-content;
-}
-    
-
-
-
-.container {
-    border: 2px solid #fff;
-    padding: 30px 40px;
-    width: 40%;
-    min-width: 500px;
-  }
-  
-  .new-task-container {
-    background-color: #fff;
-    padding: 30px 20px;
-    border-radius: 5px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    display: flex;
-  }
-  
-  .new-task-container input {
-    flex: 3;
-    font-size: 1rem;
-    border: 2px solid #d1d3d4;
-    border-radius: 5px;
-    padding: 12px;
-    font-weight: 500;
-  }
-  
-  .new-task-container input:focus {
-    outline: none;
-    border-color: #41b883;
-  }
-  
-  .new-task-button {
-    flex: 1;
-    border-radius: 5px;
-    font-weight: 500;
-    height: 100%;
-    font-size: 1rem;
-    border: none;
-    background-color: #41b883;
-    color: #fff;
-    padding: 12px;
-    margin-left: 12px;
-    cursor: pointer;
-  }
-  
-  .tasks-container {
-    background-color: #fff;
-    padding: 30px 20px;
-    margin-top: 60px;
-    border-radius: 10px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    width: 100%;
-  }
-  
-  .task-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-    margin-top: 6px;
-  }
-  
-  .task-item i {
-    background-color: #41b883;
-    color: #fff;
-    padding: 12px;
-    border-radius: 5px;
-  }
-  
-  .task-item i:hover {
-    cursor: pointer;
-  }
-  
-  /* Utilities */
-  .error {
-    border: 2px solid red !important;
-  }
-  
-  .error::placeholder {
-    color: red;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-  }
   
 </style>
 <body>
-    <div class="container">
-        <div class="form-image">
-            <img src="/NovoPHPEstacionamento/FormularioCadLog/Formulario-main/assets/img/Rectangle 82.png" alt="">
+
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+            <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
+    
+                <p id="user_infos">
+                    <span class="item-description">
+                        Administrador
+                    </span>
+                    <span class="item-description">
+                        Bem-vindo(a)
+                    </span>
+                </p>
+            </div>
+    
+            <ul id="side_items">
+                <li class="side-item ">
+                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Solicitações.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Solicitações
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Equipe.html">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Equipe
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item ">
+                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Perfil.html">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item active">
+                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/ReservarVaga.html">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Reserva de<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/DisponibilizarVAGA.html">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Disponibilizar<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Comentários.html">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Comentarios
+                        </span>
+                    </a>
+                </li>
+
+                
+            </ul>
+    
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
-        <div class="form">
-            <form method="POST" action="testelogin.php">
-                <div class="form-header">
-                    
-                    <div class="title">
-                        <h1>Login</h1>
-                    </div>
-                    <div class="login-button">
-                        <button><a href="index/index.php">Voltar a Home</a></button>
-                    </div>
-                   
+
+        <div id="logout">
+            <button id="logout_btn">
+                <a href="sair.php">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Logout
+                </span>
+                <!--NOVO script---->
+                </a>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+        <p class="destaque">
+        <div class="titulo">
+            <h1>EstacionaTempo</h1>
+            <button class="buttonD" onclick="toggle('conteudo')">Enviar e aguardar o retorno</button>
+        </div>
+        </p>
+
+        <section class="contentFormReserva">
+
+
+            <form class="col-wideForm">
+
+
+                <p class="destaque"></p>
+                <div class="informacoes">
+                    <h4>
+                        
+                        <label for="assunto"><b>Dia da semana que há vagas disponiveis</b></label>
+                        <select name="assunto" id="assunto">
+                            <option value="reclamação"><a href="/Teste/wildbeast-inicio copy/index.html">Final de Semana</option>
+                            </a>
+                            <option value="dúvida">Segunda</option>
+                            <option value="dúvida">Terça</option>
+                            <option value="dúvida">Quarta</option>
+                            <option value="dúvida">Quinta</option>
+                            <option value="dúvida">Sexta</option>
+                        </select><br><br>
+                        <label for="assunto"><b>Horários disponiveis para reserva</b></label>
+                        <select name="assunto" id="assunto">
+                            <option value="reclamação"><a href="/Teste/wildbeast-inicio copy/index.html">Matutino</option>
+                            </a>
+                            <option value="dúvida">Vespertino</option>
+                            <option value="dúvida">Noturno</option>
+                            
+                        </select><br>
+                       
+                    </h4>
                 </div>
 
-                <div class="input-group">
-                    
-                    
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email"  placeholder="Digite seu e-mail" required>
-                    </div>
-
-
-                    <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input  type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
-                    </div>
-                </div>
-
-                <!--Botão de Entrar-->
-                <div class="continue-button">
-                    <button><input type="submit" name="submit" id="submit" value="enviar"></button>
-                </div>
             </form>
-        </div>
-    </div>
+            <div class="relogio">
+                <div>
+                    <span id="horas">00</span>
+                    <span class="tempo">Horas</span>
+                </div>
+
+                <div>
+                    <span id="minutos">00</span>
+                    <span class="tempo">Minutos</span>
+                </div>
+
+                <div>
+                    <span id="segundos">00</span>
+                    <span class="tempo">Segundos</span>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/codigo/index/script.js"></script>
+    <header class="cabecalho">
+
+
+        <nav class="cabecalho-nav">
+
+
+        </nav>
+
+    </header>
+
 </body>
+
 </html>
-
-
-    
-   
-
-    

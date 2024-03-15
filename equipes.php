@@ -1,5 +1,5 @@
 <?php
-  include_once('dao.php');
+  include_once('DAO/dao.php');
 
   // Consulta da Equipe //
   $sql = "SELECT * FROM Equipe ORDER BY id DESC";
@@ -9,7 +9,7 @@
   
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +18,7 @@
 </head>
 <body>
   <tbody>
+    <!--Retorna TODAS AS EQUIPES Criadas pelos Administradores Aqui estão os nomes das Equipes Criadas e o icone de atualizar --->
     <?php 
         while($equipes_see = mysqli_fetch_assoc($resultEquipe)) 
           {

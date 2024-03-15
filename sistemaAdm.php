@@ -1,7 +1,8 @@
 
 <?php
- session_start();
-     include_once('dao.php');
+    // Validação de Login///
+     session_start();
+     include_once('DAO/dao.php');
 
      // Validação de Login //
      if((!isset($_SESSION['emailADM']) == true) and (!isset($_SESSION['senhaADM']) == true))// !isset- se nao existir uma varivael email na minha sessão e ..
@@ -11,11 +12,12 @@
           unset($_SESSION ['senhaADM']);
           header('Location: loginAdm.php');
         }
+    
 ?>
 
 
 
-<!--Perfil do Adm--->
+<!--Tela do  Administrador--->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,7 +32,7 @@
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
-                <img src="/NovoPHPEstacionamento/sidebar-main-ADM/src/images/Ellipse 1.png" id="user_avatar" alt="Avatar">
+                <img src="images/Ellipse 1.png" id="user_avatar" alt="Avatar">
     
                 <p id="user_infos">
                     <span class="item-description">
@@ -44,7 +46,7 @@
     
             <ul id="side_items">
                 <li class="side-item ">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Solicitações.html">
+                    <a href="Solicitações.php">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Solicitações
@@ -52,7 +54,7 @@
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Equipe.html">
+                    <a href="ListaDeUsuarios.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Equipe
@@ -61,7 +63,7 @@
                 </li>
 
                 <li class="side-item ">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Perfil.html">
+                    <a href="PerfilAdm.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Perfil
@@ -70,7 +72,7 @@
                 </li>
 
                 <li class="side-item ">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/ReservarVaga.html">
+                    <a href="ReservarVaga.php">
                         <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
                             Reserva de<br>
@@ -80,7 +82,7 @@
                 </li>
 
                 <li class="side-item">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/DisponibilizarVAGA.html">
+                    <a href="DisponibilizarVAGA.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>
@@ -89,7 +91,7 @@
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Comentários.html">
+                    <a href="Comentários.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Comentarios
@@ -107,7 +109,7 @@
 
         <div id="logout">
             <button id="logout_btn">
-                <a href="/NovoPHPEstacionamento/IndexTELAum/Login/index.html">
+                <a href="sairAdm.php">
                     <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="item-description">
                     Logout
@@ -159,7 +161,7 @@
 
             </form>
     </main>
-    <script src="/NovoPHPEstacionamento/sidebar-main-ADM/src/javascipt/script.js"></script>
+    <script src="script.js"></script><!--Arrumar link-->
     
     <header class="cabecalho">
  

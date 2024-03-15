@@ -1,8 +1,9 @@
 <?php 
-
+ 
+ // Perfil com os dados do Usuário para ele atualizar //
   if(!empty($_GET['id'])) //verificando se o id existe para poder atualizar  
   {
-        include_once('dao.php');
+        include_once('DAO/dao.php');
 
         $id = $_GET['id'];
         $sqlSelect = "SELECT * FROM Usuario WHERE id=$id";

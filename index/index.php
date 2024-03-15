@@ -696,9 +696,6 @@ form {
 <body>
 
 
-
-
-
   <article class="estrutura">
     <header class="header">
       <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
@@ -777,7 +774,7 @@ form {
         <ul>
           <li class="sidenav-item a:hover">
             <a href="/codigo/img/icones/botao-de-inicio.png">
-              <img src="/codigo/img/icones/botao-de-inicio.png" alt="Vaca" />
+              <img src="/codigo/img/icones/botao-de-inicio.png" alt="inicio" />
             </a>
           </li>
 
@@ -786,7 +783,7 @@ form {
           <br><br><br><br><br><br><br><br>
 
           <li class="sidenavd-item">
-            <a href="codigo/index/EscolhaUsuAdm.php">
+            <a href="/codigo/index/EscolhaUsuAdm.php">
               <img src="/codigo/img/icones/cadastro.png" alt="Cadastro" />
             </a>
           </li>

@@ -27,7 +27,7 @@
 
     <article class="estrutura">
         <header class="header">
-            <a href="#" class="logo"><img src="img/Ellipse 1.png" alt="Estacionatempo"></a>
+        <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
             <div class="titulo">
                 <h1>EstacionaTempo</h1>
             </div>
@@ -73,7 +73,7 @@
             <nav class="sidenavd">
                 <ul>
                     <li class="sidenavd-item">
-                        <a href="/NovoPHPEstacionamento/IndexTELAum/Login/index.html">
+                        <a href="index.php">
                             <img src="img/icones/botao-de-inicio.png" alt="index" />
                         </a>
                     </li>

@@ -1,7 +1,7 @@
 <?php
 
    //Atualizar o Usuário//
-    include_once('dao.php');
+    include_once('DAO/dao.php');
     if(isset($_POST['update'])) // se o botão update for acionado entt os novos dados serão enviados para o banco 
     {
             $id = $_POST['id'];

@@ -1,9 +1,8 @@
 
 <?php 
- session_start();
+     session_start();
      //encerrando a sessão botão sair por isso dentro do botão !!!
       unset($_SESSION ['email']);
       unset($_SESSION ['senha']);
-     header('Location: login.php');
-      
+     header('Location: login.php');   
 ?>

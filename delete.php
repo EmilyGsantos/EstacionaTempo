@@ -3,7 +3,7 @@
 
  if(!empty($_GET['id']))
     {
-        include_once('dao.php');
+        include_once('DAO/dao.php');
         $id = $_GET['id'];
 
         $sqlSelect = "SELECT * FROM Usuario WHERE id=$id";

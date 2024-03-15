@@ -3,7 +3,7 @@
     //se o botão submit for clicado entt ele envia OS DADOS PARA O BANCO
     if(isset($_POST['submit']))
     { 
-        include_once('dao.php');
+        include_once('DAO/dao.php');
 
         $nome      = $_POST['nome'];
         $telefone  = $_POST['telefone'];
@@ -285,7 +285,9 @@ body {
     .gender-input {
         margin-top: 0.5rem;
     }
-    .input-cadadm{
+    
+}
+.input-cadadm{
         border: 2px solid #59242E;
         background-color: #59252E;
         padding: 0.4rem 1rem;
@@ -293,7 +295,6 @@ body {
         cursor: pointer;
         color:white;
     }
-}
 </style>
 <body>
     <div class="container">
@@ -309,7 +310,7 @@ body {
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="index/index.php">Voltar a Home</a></button>
+                        <button><a href="/codigo/index/index.php">Voltar a Home</a></button>
                     </div>
                    
                 </div>
@@ -359,7 +360,7 @@ body {
                             <option value="car">Carro</option>
                             <option value="moto">Moto</option>
                             <option value="outro">Outro</option>
-                    </select><br>
+                      </select><br>
                     </div>
                     
 

@@ -4,7 +4,7 @@
   //print_r($_REQUEST);//parametros que estao vindo do login
     //SEGURANÇA:impede que o usuario acesse por meio da url o teste login caso nao haja variavel .
     if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])){ //!empyt -nao estiver vazia 
-      include_once('dao.php');
+      include_once('DAO/dao.php');
       $email = $_POST['email'];
       $senha = $_POST['senha'];
       //verificando se os dados que inseri no login são iguais aos que estao la no banco de dados na qual passei atraves do cadastro 

@@ -1,47 +1,30 @@
+
 <?php
- session_start();
-    //verificando se email e senha estao no banco de dados
+    // LISTA de Todos os Usuários cadastrados onde o ADM poderá Consultar//
 
-    //SEGURANÇA:impede que o usuario acesse por meio da url o teste login caso nao haja variavel .
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']))
-    {
-      include_once('DAO/dao.php');
-      $email = $_POST['email'];
-      $senha = $_POST['senha'];
+    // Consulta dos dados do usuario //
+    $sql = "SELECT * FROM Usuario ORDER BY id DESC";
+    $resultado = $conexao->query($sql);
 
-      $sql = "SELECT FROM Usuario Where email == $email and senha == $senha"; //verficando se os dados são os msm que estão no banco 
-      $resultlogin = $conexao->query($sql);
-
-        //verificando se os dados existem 
-        if(mysqli_num_rows($resultlogin) < 1)
-        {   // se nao existir os dados vão ser apagados e redirecionados para o login msm
-            unset($_SESSION ['email']);
-            unset($_SESSION ['senha']);
-          echo "este usuario não existe";
-        }else{
-            //caso exista vai entrar no sistema 
-            $_SESSION['email'] = $email;
-            $_SESSION['senha'] = $senha;
-            header('Location: sistema.php');
-
-        }
-    }// fim do if login
 ?>
 
-
-<!--Formulátrio de Login-->
+<!--LISTA de Todos os Usuários cadastrados onde o ADM poderá Consultar os dados dos participantes-->
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/NovoPHPEstacionamento/sidebar-main-ADM/src/css/stilePerfil.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/NovoPHPEstacionamento/FormularioCadLog/Formulario-main/assets/css/style.css">
-    <title>Login </title>
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        <title>GerenciamentoDeParticipantes</title>
+
+        <!-- CSS only -->
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -691,7 +674,7 @@ blockquote {
     border: 2px solid #fff;
     padding: 30px 40px;
     width: 40%;
-    min-width: 500px;
+    min-width: 1500px;
   }
   
   .new-task-container {
@@ -771,52 +754,62 @@ blockquote {
     text-decoration: line-through;
   }
   
-</style>
-<body>
-    <div class="container">
-        <div class="form-image">
-            <img src="/NovoPHPEstacionamento/FormularioCadLog/Formulario-main/assets/img/Rectangle 82.png" alt="">
+    </style>
+    <body class="container" style="background-color: #052244;">
+        <div class="card card-body mt-5">
+            <h1>Gerenciamento de Participantes</h1>
+            <hr>
+            <div class="continue-button">
+                <button><a href="/codigo/index/solicitaçõesAdm.php">Voltar a Home</a> </button>
+            </div>
+            <input id="input-busca" type="text" class="form-control mt-3 mb-3" placeholder="O que você procura?">
+
+            <table class="table table-hover table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Idade</th>
+                        <th>Veiculo</th>
+                        <th>Cor</th>
+                        <th>Placa</th>
+                        <th>Email</th>
+                        <th>Prioridade</th>
+                        <th>Ações</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="tabela-bebidas">
+                <?php
+                        // Retornar em tela os dados dos Participantes ///
+                        // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
+                        while($user_data = mysqli_fetch_assoc($resultado)) // fetch_assoc - serve p retornar uma matriz sociativa 
+                        {
+                            echo "<tr>";
+                            echo "<td>".$user_data['id']."</td>";
+                            echo "<td>".$user_data['nome']."</td>";
+                            echo "<td>".$user_data['telefone']."</td>";
+                            echo "<td>".$user_data['idade']."</td>";
+                            echo "<td>".$user_data['veiculo']."</td>";
+                            echo "<td>".$user_data['cor']."</td>";              
+                            echo "<td>".$user_data['placa']."</td>";
+                            echo "<td>".$user_data['email']."</td>";
+                            echo "<td>".$user_data['prioridades']."</td>";
+                            // passando o id do usuario para atualizar no href 
+                            echo "<td>
+                                    <button class='btn btn-sm btn-warning'><a href='edicao.php?id=$user_data[id]'>Adicionar Prioridade<a/></button> 
+                                
+                                    <button class='btn btn-sm btn-warning'><a href='delete.php?id=$user_data[id]'>ExcluirParticipante<a/></button> 
+                                    </td>";
+                        echo "<tr>";
+                        }
+                   ?>
+                </tbody>
+            </table>
         </div>
-        <div class="form">
-            <form method="POST" action="testelogin.php">
-                <div class="form-header">
-                    
-                    <div class="title">
-                        <h1>Login</h1>
-                    </div>
-                    <div class="login-button">
-                        <button><a href="index/index.php">Voltar a Home</a></button>
-                    </div>
-                   
-                </div>
 
-                <div class="input-group">
-                    
-                    
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email"  placeholder="Digite seu e-mail" required>
-                    </div>
-
-
-                    <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input  type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
-                    </div>
-                </div>
-
-                <!--Botão de Entrar-->
-                <div class="continue-button">
-                    <button><input type="submit" name="submit" id="submit" value="enviar"></button>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="/codigo/index/script.js"></script>
+    </body>
 </html>
-
-
-    
-   
-
-    

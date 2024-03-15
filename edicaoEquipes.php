@@ -2,7 +2,7 @@
   //Editar Equipes //    
   if(!empty($_GET['id']))
   {
-      include_once('dao.php');
+      include_once('DAO/dao.php');
       
           $id = $_GET['id'];
           $sqlSelect = "SELECT * FROM Equipe WHERE id=$id";
@@ -22,9 +22,9 @@
     }// fim do if Editar equipe
   ?>
 
-<!--Formulario  da Equipe p/ salvar os dados -->
+<!--Formulario  da Equipe p/ enviar p o Atualizar -->
  <div class="form">
-      <form method="POST" action="cadEquipe.php">
+      <form method="POST" action="saveE.php">
         <div class="input-group">
                 <div class="input-box">
                   <label for="car">Nome da equipe</label>
