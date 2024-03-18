@@ -16,7 +16,6 @@
 ?>
 
 <!--Perfil do Usuário -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,6 +25,7 @@
     <link rel="stylesheet" href="/NovoPHPEstacionamento/USUARIO/sidebar-main/src/css/styles.css">
     <title>Perfil do Usuário</title>
 </head>
+
 <body>
     <nav id="sidebar">
         <div id="sidebar_content">
@@ -73,7 +73,7 @@
                 </li>
     
                 <li class="side-item">
-                    <a href="ReservaVaga.php">
+                    <a href="index/ReservarVagaAdm.php">
                         <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
                             Reserva de<br>
@@ -83,7 +83,7 @@
                 </li>
     
                 <li class="side-item">
-                    <a href="disponibilizar.phpp">
+                    <a href="index/DisponibilizarVaga.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>
@@ -117,9 +117,9 @@
         
         <div class="titulo">
             <h1>EstacionaTempo</h1><br>
-            <img src="src/images/Rectangle 82.png" alt="Avatar">
+            <img src="src/img/Rectangle 82.png" alt="Avatar">
             <div class="continue-button">
-                <button><a href="#"">Ver Lista de Usuários</a> </button>
+                <a href="index/ListaDeUsuarios.php">Ver Lista de Usuários</a>
             </div>
     
           </div>
@@ -127,25 +127,25 @@
             
         </section>
 
-    </main
+    </main>
 
-    <!--GERADOR DE VAGAS Aleátorias-->
+   <!--Gerador de Numeros-->
     <?php
        /// Gerador de Números(Vagas) //
-        include_once('dao.php');
+        include_once('DAO/dao.php');
 
         $sql = "SELECT qntvaga FROM Equipe";
         $result = $conexao->query($sql);
 
         while($dados = mysqli_fetch_Array($result))
         {
-           $numero = $dados['qntvaga'];
+            $numero = $dados['qntvaga'];
             $gera = rand(1, $numero); // rand - função que gera números  aleatórios 
                         
         }
         echo("A vaga gerada foi $gera");     
     ?>
->
+
     <script src="src/javascript/script.js"></script>
     
     <header class="cabecalho">

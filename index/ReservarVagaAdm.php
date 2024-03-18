@@ -651,7 +651,7 @@ blockquote {
     
             <ul id="side_items">
                 <li class="side-item ">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Solicitações.html">
+                    <a href="index/SolicitaçõesAdm.php">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Solicitações
@@ -659,7 +659,7 @@ blockquote {
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Equipe.html">
+                    <a href="equipes.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Equipe
@@ -668,7 +668,7 @@ blockquote {
                 </li>
 
                 <li class="side-item ">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Perfil.html">
+                    <a href="PerfilAdm.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Perfil
@@ -677,7 +677,7 @@ blockquote {
                 </li>
 
                 <li class="side-item active">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/ReservarVaga.html">
+                    <a href="#">
                         <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
                             Reserva de<br>
@@ -687,7 +687,7 @@ blockquote {
                 </li>
 
                 <li class="side-item">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/DisponibilizarVAGA.html">
+                    <a href="index/DisponibilizarVaga.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>
@@ -696,7 +696,7 @@ blockquote {
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Comentários.html">
+                    <a href="Comentários.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Comentarios

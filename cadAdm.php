@@ -18,8 +18,7 @@
    header('Location: cadEquipe.php');
   }// fim do if cadastrar
 
-  /*<form method="POST" action="cadAdm.php">  
-  */ 
+
 
    
 ?>

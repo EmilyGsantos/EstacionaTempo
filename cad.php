@@ -353,7 +353,7 @@ body {
                         <input  type="password" name="senha" id="senha" placeholder="Digite sua senha novamente" required>
                     </div>
                     
-                      <!--Arrumar-->
+                     
                     <div class="input-box">
                         <label for="car">Tipo do veiculo </label>
                        <select name="veiculo" id="veiculo">

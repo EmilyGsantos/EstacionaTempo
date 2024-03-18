@@ -651,7 +651,7 @@ blockquote {
     
             <ul id="side_items">
                 <li class="side-item ">
-                    <a href="/NovoPHPEstacionamento/sidebar-main-ADM/src/Solicitações.html">
+                    <a href="SolicitaçõesAdm.php">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Solicitações
@@ -659,7 +659,7 @@ blockquote {
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="equipe.php">
+                    <a href="equipes.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Equipe
@@ -687,7 +687,7 @@ blockquote {
                 </li>
 
                 <li class="side-item">
-                    <a href="DisponibilizarVAGA.php">
+                    <a href="DisponibilizarVaga.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>

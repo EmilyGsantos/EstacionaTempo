@@ -1,12 +1,5 @@
 
-<?php
-    // LISTA de Todos os Usuários cadastrados onde o ADM poderá Consultar//
-
-    // Consulta dos dados do usuario //
-    $sql = "SELECT * FROM Usuario ORDER BY id DESC";
-    $resultado = $conexao->query($sql);
-
-?>
+<!--Arrunar PHP-->
 
 <!--LISTA de Todos os Usuários cadastrados onde o ADM poderá Consultar os dados dos participantes-->
 <!DOCTYPE html>
@@ -15,8 +8,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/NovoPHPEstacionamento/sidebar-main-ADM/src/css/stilePerfil.css">
-
+        <link rel="stylesheet" href="css/stilePerfil.css">
+        
         <title>GerenciamentoDeParticipantes</title>
 
         <!-- CSS only -->
@@ -120,69 +113,7 @@ img {
 }
 
 
-#side_items {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    list-style: none;
-}
 
-.side-item {
-    border-radius: 8px;
-    padding: 14px;
-    cursor: pointer;
-}
-
-.side-item.active {
-    background-color: #782680;
-}
-
-.side-item:hover:not(.active),
-#logout_btn:hover {
-    background-color: #F2911B;
-}
-
-.side-item a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-}
-
-.side-item.active a {
-    color: #e3e9f7;
-}
-
-.side-item a i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-}
-
-#logout {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    list-style: none;
-    border-top: 1px solid #061f58;
-    padding: 5px;
-}
-
-#logout_btn {
-    border: none;
-    padding: 12px;
-    font-size: 14px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    border-radius: 8px;
-    text-align: start;
-    cursor: pointer;
-    background-color: #fafafa;
-}
 
 #open_btn {
     position: absolute;
@@ -232,22 +163,6 @@ img {
 
 
 
-
-
-.ave {
-    background-color: none;
-    /*definindo cor de fundo*/
-    width: 1300px;
-    height: 740px;
-    /*definindo altura*/
-    /*definindo largura*/
-    /*dando espaço entre os itens no cabecalho*/
-    border: 3px solid #274fff;
-    /*definindo cor da borda*/
-    border-radius: 10px;
-    BOX-shadow: 0 0 15px #274fff, inset 0 0 15px #274fff;
-    text-shadow: 0 0 15px #274fff;
-}
 
 
 
@@ -538,42 +453,6 @@ input[type=submit] {
     text-shadow: 0 0 15px rgba(237, 245, 120, 0.911);
 }
 
-.relogio {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 200px;
-    width: 550px;
-    background: transparent;
-    border-radius: 3px;
-    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
-
-
-}
-
-.relogio div {
-    height: 170px;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background: rgba(245, 137, 15, 0.822);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
-    border-radius: 7px;
-    letter-spacing: 3px;
-
-}
-
-.relogio span {
-    font-weight: bolder;
-    font-size: 60px;
-}
-
-.relogio span.tempo {
-    font-size: 10px;
-}
 
 p,
 h1,
@@ -651,23 +530,6 @@ blockquote {
     font-weight: 500;
     color: #fff;
 }
-.divSearch {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-
-.col-wideFormReserva {
-    display: grid;
-    max-width: 500px;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
-    padding-left: 90px;
-    max-height: fit-content;
-}
-    
-
 
 
 .container {
@@ -756,11 +618,14 @@ blockquote {
   
     </style>
     <body class="container" style="background-color: #052244;">
+        
+
         <div class="card card-body mt-5">
+            
             <h1>Gerenciamento de Participantes</h1>
             <hr>
             <div class="continue-button">
-                <button><a href="/codigo/index/solicitaçõesAdm.php">Voltar a Home</a> </button>
+                <button><a href="/codigo/index/SolicitaçõesAdm.php">Voltar a Home</a> </button>
             </div>
             <input id="input-busca" type="text" class="form-control mt-3 mb-3" placeholder="O que você procura?">
 
@@ -781,35 +646,18 @@ blockquote {
                     </tr>
                 </thead>
                 <tbody id="tabela-bebidas">
-                <?php
-                        // Retornar em tela os dados dos Participantes ///
-                        // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
-                        while($user_data = mysqli_fetch_assoc($resultado)) // fetch_assoc - serve p retornar uma matriz sociativa 
-                        {
-                            echo "<tr>";
-                            echo "<td>".$user_data['id']."</td>";
-                            echo "<td>".$user_data['nome']."</td>";
-                            echo "<td>".$user_data['telefone']."</td>";
-                            echo "<td>".$user_data['idade']."</td>";
-                            echo "<td>".$user_data['veiculo']."</td>";
-                            echo "<td>".$user_data['cor']."</td>";              
-                            echo "<td>".$user_data['placa']."</td>";
-                            echo "<td>".$user_data['email']."</td>";
-                            echo "<td>".$user_data['prioridades']."</td>";
-                            // passando o id do usuario para atualizar no href 
-                            echo "<td>
-                                    <button class='btn btn-sm btn-warning'><a href='edicao.php?id=$user_data[id]'>Adicionar Prioridade<a/></button> 
-                                
-                                    <button class='btn btn-sm btn-warning'><a href='delete.php?id=$user_data[id]'>ExcluirParticipante<a/></button> 
-                                    </td>";
-                        echo "<tr>";
-                        }
-                   ?>
+                    <?php                    
+                        include('../DAO/consultar.php'); 
+                        $consultar = new Consultar();
+                     ?>
                 </tbody>
             </table>
         </div>
+    
+        
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="/codigo/index/script.js"></script>
+
     </body>
 </html>

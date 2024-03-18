@@ -1,15 +1,4 @@
-<?php
- //Retornando os dados cadastrados do usuário para ele edita-los ou exluir sua conta //
- include_once('DAO/dao.php');
-
-    // Consulta dos dados para o user ver  
-    $sql = "SELECT * FROM Usuario ORDER BY id DESC";
-    $resultado = $conexao->query($sql);
-
-?>
-
-
-<!--Perfil do Usuário-->
+<!--Adm--->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/NovoPHPEstacionamento/sidebar-main-ADM/src/css/style.css">
-    <title>Perfil</title>
+    <title>Disponibilizar Vaga Administrador</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -253,7 +242,7 @@ img {
 .cabecalho {
     background-color: none;
     /*definindo cor de fundo*/
-    width: 1725px;
+    width: 1525px;
     height: 100px;
     /*definindo altura*/
     display: flex;
@@ -529,7 +518,42 @@ input[type=submit] {
     text-shadow: 0 0 15px rgba(237, 245, 120, 0.911);
 }
 
+.relogio {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 550px;
+    background: transparent;
+    border-radius: 3px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
 
+
+}
+
+.relogio div {
+    height: 170px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(245, 137, 15, 0.822);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
+    border-radius: 7px;
+    letter-spacing: 3px;
+
+}
+
+.relogio span {
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.relogio span.tempo {
+    font-size: 10px;
+}
 
 p,
 h1,
@@ -607,26 +631,17 @@ blockquote {
     font-weight: 500;
     color: #fff;
 }
-  
 </style>
-    <script>
-        
-        function alternarJanelaEdicao() {
-        janelaEdicao.classList.toggle('abrir');
-        janelaEdicaoFundo.classList.toggle('abrir');
-        }
-
-    </script>
 <body>
 
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
-                <img src="/NovoPHPEstacionamento/sidebar-main-ADM/src/images/Ellipse 1.png" id="user_avatar" alt="Avatar">
+            <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
     
                 <p id="user_infos">
                     <span class="item-description">
-                        
+                        Administrador
                     </span>
                     <span class="item-description">
                         Bem-vindo(a)
@@ -635,7 +650,14 @@ blockquote {
             </div>
     
             <ul id="side_items">
-                
+                <li class="side-item ">
+                    <a href="index/SolicitaçõesAdm.php">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Solicitações
+                        </span>
+                    </a>
+                </li>
                 <li class="side-item">
                     <a href="equipes.php">
                         <i class="fa-solid fa-gear"></i>
@@ -645,8 +667,8 @@ blockquote {
                     </a>
                 </li>
 
-                <li class="side-item active">
-                    <a href="#">
+                <li class="side-item ">
+                    <a href="Perfil.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Perfil
@@ -664,7 +686,7 @@ blockquote {
                     </a>
                 </li>
 
-                <li class="side-item">
+                <li class="side-item active">
                     <a href="index/DisponibilizarVaga.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
@@ -703,79 +725,108 @@ blockquote {
         </div>
     </nav>
 
-    <main>
-        <div class="titulo">
-            <h1>EstacionaTempo</h1>
-        </div>
-       
-        <div>
-        <table>
-            <thead>
-                <tr>
-                   <th>Nome</th>
-                   <th>Telefone</th>
-                   <th>Cpf</th>
-                   <th>Idade</th>
-                   <th>Veiculo</th>
-                   <th>Cor</th>
-                   <th>Placa</th>
-                   <th>Prioridade</th>
-                   <th>Email</th>
-                   <th>Senha</th>
-                   
-                </tr>
-            </thead>
-            <tbody>
-               
-                <?php // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
-                  while($user_data = mysqli_fetch_assoc($resultado)) // fetch_assoc - serve p retornar uma matriz sociativa 
-                   {
-                        echo "<tr>";
-                        echo "<td>".$user_data['id']."</td>";
-                         echo "<td>".$user_data['nome']."</td>";
-                         echo "<td>".$user_data['telefone']."</td>";
-                         echo "<td>".$user_data['cpf']."</td>";
-                         echo "<td>".$user_data['idade']."</td>";
-                         echo "<td>".$user_data['veiculo']."</td>";
-                         echo "<td>".$user_data['cor']."</td>";              
-                         echo "<td>".$user_data['placa']."</td>";
-                         echo "<td>".$user_data['prioridades']."</td>";
-                         echo "<td>".$user_data['email']."</td>";
-                         echo "<td>".$user_data['senha']."</td>";
-                         // passando o id do usuario para atualizar no href 
-                         echo "<td>
-                                <a class='bnt bnt-primary' href='edicao.php?id=$user_data[id]'> 
-                                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class= 'bi bi-pencil-square' viewBox='0 0 16 16'>
-                                        <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
-                                        <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z'>
-                                    </svg>
-                                <a/>
-                                <a class='bnt bnt-primary' href='delete.php?id=$user_data[id]'> 
-                                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash-fill' viewBox='0 0 16 16'>
-                                    <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0'/>
-                                </svg>
-                                <a/>
-                                </td>";
-                    echo "<tr>";
-                   }
-                ?>
-            </tbody>
-        </table>
-    </div> 
-      
-          
-    </main>
-
-
     
-    
-    <header class="cabecalho">
+        <main>
+            <div class="titulo">
+                <h1>EstacionaTempo</h1>
+              </div>
+              <section class="content">
         
-        <nav class="cabecalho-nav">
-        </nav>
-        
-    </header>
-
+                <p class="destaque"></p>
+            </section>
+            <section class="contentFormReserva">
     
-</body>
-</html>
+    
+                <form class="col-wideForm">
+    
+    
+                    <p class="destaque"></p>
+                    
+                    
+                    <div class="informacoes">
+                        <h4>
+                            
+                            <label for="assunto"><b>Dia da semana que irá disponibilizar</b></label>
+                            <select name="assunto" id="assunto">
+                                <option value="reclamação"><a href="/Teste/wildbeast-inicio copy/index.php">Final de Semana</option>
+                                </a>
+                                <option value="dúvida">Segunda</option>
+                                <option value="dúvida">Terça</option>
+                                <option value="dúvida">Quarta</option>
+                                <option value="dúvida">Quinta</option>
+                                <option value="dúvida">Sexta</option>
+                                <option value="dúvida">Todos</option>
+                            </select><br><br>
+                            <label for="assunto"><b>Escolha o horário para disponibilizar</b></label>
+                            <select name="assunto" id="assunto">
+                                <option value="reclamação"><a href="/Teste/wildbeast-inicio copy/index.php">Matutino</option>
+                                </a>
+                                <option value="dúvida">Vespertino</option>
+                                <option value="dúvida">Noturno</option>
+                                <option value="dúvida">Todos os Reservados</option>
+                                
+                            </select><br><br>
+                            <label for="assunto" placeholder="Digite a quantidade"><b>Periodo que a tornará disponivel</b></label>
+                            <select name="assunto" id="assunto">
+                                <option value="reclamação"><a href="/Teste/wildbeast-inicio copy/index.php">Periodo de 3 a 7 dias</option>
+                                </a>
+                                <option value="dúvida">1 dia</option>
+                                <option value="dúvida">2 dias</option>
+                                <option value="dúvida">3 dias</option>
+    
+                            </select><br><br>
+                           
+                        </h4>
+                        <div class="gender-inputs">
+                            <h2><div class="gender-title">
+                                <h6>Deseja mesmo disponibilizar a vaga?</h6>
+                            </div></h2>
+            
+                            <div class="gender-group">
+                                <div class="gender-input">
+                                    <input id="female" type="radio" name="gender">
+                                    <label for="female"></label>
+                                </div>
+            
+                                
+                            </div>
+                        </div>
+                    </div>
+    
+                </form>
+                <div class="continue-button">
+                    <button><a href="#">Enviar</a> </button>
+                </div>
+                <div class="relogio">
+                    <div>
+                        <span id="horas">13</span>
+                        <span class="tempo">Vaga</span>
+                    </div>
+    
+                    <div>
+                        <span id="">Seg</span>
+                        <span class="tempo">Dia da semana</span>
+                    </div>
+    
+                    <div>
+                        <span id="">Man</span>
+                        <span class="tempo">Periodo</span>
+                    </div>
+    
+                </div>
+                
+            </section>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="/codigo/index/script.js"></script>        
+        <header class="cabecalho">
+    
+            
+            <nav class="cabecalho-nav">
+    
+                
+        </header>
+    
+        
+    </body>
+    </html>

@@ -708,7 +708,7 @@ blockquote {
 
         <div id="logout">
             <button id="logout_btn">
-                <a href="/codigo/index/PerfilAdm.php">
+                <a href="sairAdm.php">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span class="item-description">
                         Logout

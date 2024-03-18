@@ -303,45 +303,46 @@ body {
 </style>
 <body>
 
-        <div class="form-image">
-            <img src="/NovoPHPEstacionamento/FormularioCadLog/Formulario-main/assets/img/Rectangle 82.png" alt="">
-        </div>
-        <div class="form">
-                <div class="form-header">
-                    
-                    <div class="title">
-                        <h1>Login Administrador</h1>
-                    </div>
-                    <div class="continue-button">
-                        <button><a href="/codigo/index/ListaDeUsuarios.php">Home</a> 
-                        </button>
-                    </div>
-                   
-                </div>
-            <form action="#">
+<div class="container">
+    <div class="form-image">
+        <img src="/codigo/img/Rectangle 82.png" alt="">
+    </div>
+    
+    
+    <div class="form">
+            <div class="form-header">
                 
-
-                <div class="input-group">
-                    
-                    
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input  type="email" name="emailADM" id="emailADM" placeholder="Digite seu e-mail" required>
-                    </div>
-
-
-                    <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input  type="password" name="senhaADM" id="senhaADM" placeholder="Digite sua senha" required>
-                    </div>
-                </div>
-
+                <div class="title">
+                    <h1>Login Administrador</h1>
                 
                 <div class="continue-button">
-                    <input class="input-cadadm" type="submit" name="submitA" id="submitA" value="Enviar">
+                    <button><a href="/codigo/index/index.php">Home</a> 
+                    </button>
                 </div>
-            </form>
-        </div>
+                </div>
+            </div>
+        
+            <div class="input-group">
+                
+                
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <input  type="email" name="emailADM" id="emailADM" placeholder="Digite seu e-mail" required>
+                </div>
+
+
+                <div class="input-box">
+                    <label for="password">Senha</label>
+                    <input  type="password" name="senhaADM" id="senhaADM" placeholder="Digite sua senha" required>
+                </div>
+            </div>
+
+            
+            <div class="continue-button">
+                <input class="input-cadadm" type="submit" name="submitA" id="submitA" value="Enviar">
+            </div>
+        
     </div>
+</div>
 </body>
 </html>

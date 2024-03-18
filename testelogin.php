@@ -1,9 +1,10 @@
 <?php
-  session_start();
 
-  //print_r($_REQUEST);//parametros que estao vindo do login
-    //SEGURANÇA:impede que o usuario acesse por meio da url o teste login caso nao haja variavel .
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])){ //!empyt -nao estiver vazia 
+ session_start();
+
+  //parametros que estao vindo do login
+  //SEGURANÇA:impede que o usuario acesse por meio da url o teste login caso nao haja variavel .
+      if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])){ //!empyt -nao estiver vazia 
       include_once('DAO/dao.php');
       $email = $_POST['email'];
       $senha = $_POST['senha'];
@@ -11,8 +12,8 @@
       $sql = "SELECT * FROM Usuario WHERE email = '$email' and senha = '$senha'";
       $result = $conexao->query($sql); //query - requisitando os dados do banco atraves da variavel sql 
       
-      //print_r($sql);
-      //print_r($request);
+    // fim da função
+    
       
       //verifica se os dados existem no banco 
       if(mysqli_num_rows($result) < 1){   // mysqli_num_rows n de linhas
@@ -27,5 +28,8 @@
     }else{
         header('Location: login.php');//nao acessa
     }
+
+ 
+  
 
 ?>

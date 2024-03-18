@@ -1,18 +1,18 @@
 <?php
         //conexao com o banco de dados 
-         $dbHost = 'localhost';
-         $dbuser = 'root';
-         $dbpassword = '';
-         $dbname = 'EstacionaTempo';
+         $Host = 'localhost';
+         $user = 'root';
+         $password = '';
+         $name = 'EstacionaTempo';
 
-         $conexao = new mysqli($dbHost, $dbuser, $dbpassword, $dbname); //passando os parametros do banco de dados 
+         $conexao = new mysqli($Host, $user, $password, $name); //passando os parametros do banco de dados 
 
             //checando a conexao com o banco de dados
             if($conexao->connect_error)
             {
                 echo "NAO CONECTADO!";
             }else{
-                echo "conectado!";
+                echo ""; // conectado
             }
 
 
