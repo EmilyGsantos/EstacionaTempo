@@ -27,9 +27,9 @@
       }
     }else{
         header('Location: login.php');//nao acessa
-    }
+    }// fim do if 
 
- 
+
+
   
-
 ?>

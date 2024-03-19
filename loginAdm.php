@@ -309,7 +309,8 @@ body {
     </div>
     
     
-    <div class="form">
+    <div class="form" >
+        <form  method="POST" action="testeloginAdm.php">
             <div class="form-header">
                 
                 <div class="title">
@@ -339,9 +340,9 @@ body {
 
             
             <div class="continue-button">
-                <input class="input-cadadm" type="submit" name="submitA" id="submitA" value="Enviar">
+                <input class="input-cadadm" type="submit" name="submitA" id="submitA" >
             </div>
-        
+        </form>
     </div>
 </div>
 </body>
