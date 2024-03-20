@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="/codigo/index/EquipeAdmimistrador.php">
+                <a href="../equipes.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Equipe
@@ -44,14 +44,7 @@
                     </a>
                 </li>
 
-                <li class="side-item ">
-                    <a href="/codigo/index/PerfilAdm.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="item-description">
-                            Perfil
-                        </span>
-                    </a>
-                </li>
+                
 
                 <li class="side-item ">
                     <a href="/codigo/index/ReservarVagaAdm.php">
@@ -64,7 +57,7 @@
                 </li>
 
                 <li class="side-item active">
-                    <a href="index/DisponibilizarVaga.php">
+                    <a href="#">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>
@@ -72,7 +65,15 @@
                         </span>
                     </a>
                 </li>
-               
+                <li class="side-item ">
+                    <a href="/codigo/index/PerfilAdm.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+
 
                 
             </ul>

@@ -1,6 +1,8 @@
 <?php
  session_start();
     //verificando se email e senha estao no banco de dados
+  
+    
 
     //SEGURANÇA:impede que o usuario acesse por meio da url o teste login caso nao haja variavel .
     if(isset($_POST['submitA']) && !empty($_POST['emailADM']) && !empty($_POST['senhaADM']))
@@ -25,7 +27,7 @@
             header('Location: sistemaAdm.php');
 
         }
-    }// fim do if login do admnistrador
+    }// fim do if login
 ?>
 
 
@@ -301,49 +303,51 @@ body {
 
   
 </style>
-<body>
+<html>
+ <body>
 
-<div class="container">
-    <div class="form-image">
-        <img src="/codigo/img/Rectangle 82.png" alt="">
-    </div>
-    
-    
-    <div class="form" >
-        <form  method="POST" action="testeloginAdm.php">
-            <div class="form-header">
-                
-                <div class="title">
-                    <h1>Login Administrador</h1>
+    <div class="container">
+        <div class="form-image">
+            <img src="/codigo/img/Rectangle 82.png" alt="">
+        </div>
+        
+        
+        <div class="form" >
+            
+            <form  method="POST" action="testeloginAdm.php">
+                <div class="form-header">
+                    
+                    <div class="title">
+                        <h1>Login Administrador</h1>
+                    
+                    <div class="continue-button">
+                        <button><a href="/codigo/index/index.php">Home</a> 
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            
+                <div class="input-group">
+                    
+                    
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input  type="email" name="emailADM" id="emailADM" placeholder="Digite seu e-mail" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input  type="password" name="senhaADM" id="senhaADM" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+
                 
                 <div class="continue-button">
-                    <button><a href="/codigo/index/index.php">Home</a> 
-                    </button>
+                    <input class="input-cadadm" type="submit" name="submitA" id="submitA" >
                 </div>
-                </div>
-            </div>
-        
-            <div class="input-group">
-                
-                
-                <div class="input-box">
-                    <label for="email">E-mail</label>
-                    <input  type="email" name="emailADM" id="emailADM" placeholder="Digite seu e-mail" required>
-                </div>
-
-
-                <div class="input-box">
-                    <label for="password">Senha</label>
-                    <input  type="password" name="senhaADM" id="senhaADM" placeholder="Digite sua senha" required>
-                </div>
-            </div>
-
-            
-            <div class="continue-button">
-                <input class="input-cadadm" type="submit" name="submitA" id="submitA" >
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
-</body>
+    </body>
 </html>

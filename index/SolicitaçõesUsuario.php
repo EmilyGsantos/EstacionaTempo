@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/codigo/css/styleUsuario.css">
-    <title>Reservar Vaga Usuario</title>
+    <title>Solicitações Usuario</title>
 </head>
 
 <body>
@@ -26,34 +26,18 @@
             </div>
     
             <ul id="side_items">
-                <li class="side-item ">
-                    <a href="/codigo/index/SolicitaçõesUsuario.php">
+            <li class="side-item active">
+                    <a href="#">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Solicitações
                         </span>
                     </a>
                 </li>
-                <li class="side-item">
-                    <a href="/codigo/index/EquipeUsuario.php">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="item-description">
-                            Equipe
-                        </span>
-                    </a>
-                </li>
+           
 
                 <li class="side-item ">
-                    <a href="/codigo/index/PerfilAdm.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="item-description">
-                            Perfil
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item active">
-                    <a href="#">
+                    <a href="ReservarVagaUsuario.php">
                         <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
                             Reserva de<br>
@@ -62,8 +46,8 @@
                     </a>
                 </li>
 
-                <li class="side-item">
-                    <a href="/codigo/index/DisponibilizarVaga.php">
+                <li class="side-item ">
+                    <a href="DisponibilizarVagaUsuario.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>
@@ -71,7 +55,16 @@
                         </span>
                     </a>
                 </li>
+                <li class="side-item ">
+                <a href="/codigo/PerfilUser.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
                 
+            </ul>
                 
             </ul>
     

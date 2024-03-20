@@ -38,30 +38,14 @@
     
             <ul id="side_items">
                 <li class="side-item ">
-                    <a href="/codigo/index/SolicitaçõesAdm.php">
+                    <a href="/codigo/index/SolicitaçõesUsuario.php">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Solicitações
                         </span>
                     </a>
                 </li>
-                <li class="side-item">
-                    <a href="/codigo/index/EquipeUsuario.php">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="item-description">
-                            Equipe
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item ">
-                    <a href="/codigo/index/PerfilUser.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="item-description">
-                            Perfil
-                        </span>
-                    </a>
-                </li>
+                
 
                 <li class="side-item ">
                     <a href="/codigo/index/ReservarVagaUsuario.php">
@@ -73,7 +57,7 @@
                     </a>
                 </li>
 
-                <li class="side-item active">
+                <li class="side-item">
                     <a href="/codigo/index/DisponibilizarVaga.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
@@ -82,7 +66,14 @@
                         </span>
                     </a>
                 </li>
-                
+                <li class="side-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
                 
             </ul>
     
@@ -114,7 +105,7 @@
                 <p class="destaque"></p>
             </section>
             <section class="contentFormReserva">
-    
+    <form action="">
     
                 <div>
                     <table>
@@ -171,6 +162,7 @@
                     </table>
                 
             </section>
+            </form>
         </main>
       
         

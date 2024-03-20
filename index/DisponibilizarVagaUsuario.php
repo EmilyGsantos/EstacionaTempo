@@ -19,9 +19,7 @@
             <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
     
                 <p id="user_infos">
-                    <span class="item-description">
-                        Administrador
-                    </span>
+                    
                     <span class="item-description">
                         Bem-vindo(a)
                     </span>
@@ -30,33 +28,17 @@
     
             <ul id="side_items">
                 <li class="side-item ">
-                    <a href="index/SolicitaçõesAdm.php">
+                    <a href="SolicitaçõesUsuario.php">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Solicitações
                         </span>
                     </a>
                 </li>
-                <li class="side-item">
-                    <a href="equipes.php">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="item-description">
-                            Equipe
-                        </span>
-                    </a>
-                </li>
+                
 
                 <li class="side-item ">
-                    <a href="/codigo/PerfilUser.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="item-description">
-                            Perfil
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item ">
-                    <a href="index/ReservarVagaAdm.php">
+                    <a href="ReservarVagaUsuario.php">
                         <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
                             Reserva de<br>
@@ -66,7 +48,7 @@
                 </li>
 
                 <li class="side-item active">
-                    <a href="index/DisponibilizarVaga.php">
+                    <a href="DisponibilizarVaga.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>
@@ -75,6 +57,15 @@
                     </a>
                 </li>
                 
+                <li class="side-item ">
+                    <a href="../PerfilUser.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+
                 
             </ul>
     

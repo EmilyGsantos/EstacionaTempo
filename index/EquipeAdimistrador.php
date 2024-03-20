@@ -749,7 +749,7 @@ blockquote {
                     </a>
                 </li>
                 <li class="side-item active">
-                    <a href="/codigo/index/EquipeAdimistrador.php">
+                    <a href="../equipes.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Equipe
@@ -757,15 +757,7 @@ blockquote {
                     </a>
                 </li>
 
-                <li class="side-item ">
-                    <a href="/codigo/index/PerfilAdm.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="item-description">
-                            Perfil
-                        </span>
-                    </a>
-                </li>
-
+             
                 <li class="side-item ">
                     <a href="/codigo/index/ReservarVagaAdm.php">
                         <i class="fa-solid fa-bell"></i>
@@ -786,6 +778,14 @@ blockquote {
                     </a>
                 </li>
                 
+                <li class="side-item ">
+                    <a href="/codigo/index/PerfilAdm.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
 
 
             </ul>
@@ -813,25 +813,7 @@ blockquote {
             <h1>EstacionaTempo</h1>
           </div>
        
-          <div class="container">
-            <div class="new-task-container">
-              <input
-                type="text"
-                class="new-task-input"
-                placeholder="Editar Perfil..."
-              />
-      
-              <button class="new-task-button">Adicionar</button>
-            </div>
-      
-            <div class="tasks-container"></div>
-          </div>
-      
-          <script
-            src="https://kit.fontawesome.com/f9e19193d6.js"
-            crossorigin="anonymous"
-          ></script>
-        
+
         
     </main>
 

@@ -27,6 +27,6 @@
 
     header('Location: sistema.php');
 
-    //ATUALIZAR EQUIPE //
+    
 
 ?>
