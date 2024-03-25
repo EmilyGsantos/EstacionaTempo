@@ -12,8 +12,7 @@
       $sql = "SELECT * FROM Usuario WHERE email = '$email' and senha = '$senha'";
       $result = $conexao->query($sql); //query - requisitando os dados do banco atraves da variavel sql 
       
-    // fim da função
-    
+   
       
       //verifica se os dados existem no banco 
       if(mysqli_num_rows($result) < 1){   // mysqli_num_rows n de linhas

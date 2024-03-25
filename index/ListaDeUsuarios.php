@@ -1,6 +1,4 @@
 
-<!--Arrunar PHP-->
-
 <!--LISTA de Todos os Usuários cadastrados onde o ADM poderá Consultar os dados dos participantes-->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -49,7 +47,7 @@
                             include_once('../DAO/dao.php');
 
                             // Consulta dos dados do usuario //
-                            $sql = "SELECT id,nome, idade, telefone, veiculo, cor, placa, email FROM Usuario ";                
+                            $sql = "SELECT id,nome, idade, telefone, veiculo, cor, placa, email,prioridades FROM Usuario ";                
                             $result = mysqli_query($conexao, $sql);
                     
                     
@@ -57,15 +55,16 @@
                                 
                             // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
                             while($row = mysqli_fetch_assoc($result)) // fetch_assoc - serve p retornar uma matriz sociativa 
-                            {
-                                echo  $row['id'],
-                                    $row['nome'],
-                                    $row['idade'],
-                                    $row['telefone'],
-                                    $row['veiculo'],
-                                    $row['cor'],
-                                    $row['placa'],
-                                    $row['email'];
+                            {  "<table class='table table-hover table-striped'>";
+                                    echo "<th>ID:".$row['id']."</th><br>",
+                                    "<th>".$row['nome']."</th><br>",
+                                    "<th>".$row['idade']."</th><br>",
+                                    "<th>".$row['telefone']."</th><br>",
+                                    "<th>".$row['veiculo']."</th><br>",
+                                    "<th>".$row['cor']."</th><br>",
+                                    "<th>".$row['placa']."</th><br>",
+                                    "<th>".$row['email']."</th><br>",
+                                    "<th>".$row['prioridades']."</th>";
                     
                                     // passando o id do usuario para retirar no href 
                             }// fim do while

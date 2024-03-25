@@ -1,28 +1,4 @@
-<?php
-  //Editar Equipes //    
-  if(!empty($_GET['id']))
-  {
-      include_once('DAO/dao.php');
-      
-          $id = $_GET['id'];
-          $sqlSelect = "SELECT * FROM Equipe WHERE id=$id";
-
-          $result = $conexao->query($sqlSelect);
-
-          if($result->num_rows > 0)
-           {
-              while($equipes_see = mysqli_fetch_assoc($result))
-              {
-                    $nomeequipe = $equipes_see['nome_equipe'];
-                    $qntvagas = $equipes_see['qntvaga'];
-                    $qntParciais =$equipes_see ['qntParciais'];
-              }// fim do while
-
-            } // fim do while
-    }// fim do if Editar equipe
-  ?>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -51,7 +27,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #F2911B;
+    background-color: #325573;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
@@ -82,6 +58,7 @@ main {
 #user_infos {
     display: flex;
     flex-direction: column;
+    color: #ccc;
 }
 
 img {
@@ -102,9 +79,12 @@ img {
 .imagem-2 {
     align-self: end;
 }
-
+.ImgIndex{
+    width: 200px;
+    height: 200px;
+}
 #user_infos span:last-child {
-    color: #6b6b6b;
+    color: #ffffff;
     font-size: 12px;
 }
 
@@ -133,7 +113,7 @@ img {
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #e3e9f7;
+    background-color: #F2911B;
 }
 
 .side-item a {
@@ -141,7 +121,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0a0a0a;
+    color: #ffffff;
 }
 
 .side-item.active a {
@@ -161,7 +141,7 @@ img {
     flex-direction: column;
     gap: 8px;
     list-style: none;
-    border-top: 1px solid #e3e9f7;
+    border-top: 1px solid #061f58;
     padding: 5px;
 }
 
@@ -175,7 +155,7 @@ img {
     border-radius: 8px;
     text-align: start;
     cursor: pointer;
-    background-color: transparent;
+    background-color: #fafafa;
 }
 
 #open_btn {
@@ -255,7 +235,7 @@ img {
 .cabecalho {
     background-color: none;
     /*definindo cor de fundo*/
-    width: 1525px;
+    width: 1325px;
     height: 100px;
     /*definindo altura*/
     display: flex;
@@ -267,7 +247,7 @@ img {
     border-radius: 10px;
     BOX-shadow: 0 0 15px #f827ff, inset 0 0 15px #f827ff;
     text-shadow: 0 0 15px #f827ff;
-    padding-top: 90px;
+
 }
 
 
@@ -294,12 +274,12 @@ form {
     border: 2px solid #ffffff;
     padding: 15px;
     margin: 20px auto;
-    margin-left: 100px;
+    margin-left: 40px;
     margin-top: 250px;
     width: 900px fit-content;
     height: 250px fit-content;
     box-shadow: 5px 10px #F2911B;
-    position: center;
+    position: absolute;
     transform: translate(-50%, );
     display: flex;
     overflow: hidden;
@@ -406,11 +386,12 @@ form {
 
 .conteudo {
     width: 400px;
-    height: 500px;
-    border: 1px solid black;
+    height: 700px;
+    border: 3px solid rgb(255, 255, 255);
     margin-top: 5px;
     padding: 10px;
-    background-color: lightgreen;
+    background-color: transparent;
+    
 }
 
 .conteudoB {
@@ -544,7 +525,20 @@ input[type=submit] {
 
 }
 
+.relogio div {
+    height: 170px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(245, 137, 15, 0.822);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
+    border-radius: 7px;
+    letter-spacing: 3px;
 
+}
 
 .relogio span {
     font-weight: bolder;
@@ -555,7 +549,10 @@ input[type=submit] {
     font-size: 10px;
 }
 
-
+p,
+h1,
+ul,
+li,
 blockquote {
     padding: 0px;
     margin: 0px;
@@ -575,8 +572,8 @@ blockquote {
     margin-top: 30px;
 }
 
-@media screen and (max-width: 1094px) {
-    .sidebar_content {
+@media screen and (max-width: 1064px) {
+    .container {
         width: 90%;
         height: auto;
     }
@@ -627,135 +624,107 @@ blockquote {
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
-
+}
+.divSearch {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 
- 
-</style>
-
- 
- <!DOCTYPE html>
- <html lang="pt-br">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EditarEquipe</title>
- </head>
- <body>
-
- <nav id="sidebar">
-        <div id="sidebar_content">
-            <div id="user">
-            <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
+.col-wideFormReserva {
+    display: grid;
+    max-width: 500px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    padding-left: 90px;
+    max-height: fit-content;
+}
     
-                <p id="user_infos">
-                    <span class="item-description">
-                        Administrador
-                    </span>
-                    <span class="item-description">
-                        Bem-vindo(a)
-                    </span>
-                </p>
-            </div>
-    
-            <ul id="side_items">
-                <li class="side-item ">
-                    <a href="index/SolicitaçõesAdm.php">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span class="item-description">
-                            Solicitações
-                        </span>
-                    </a>
-                </li>
-                <li class="side-item">
-                    <a href="equipes.php">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="item-description">
-                            Equipe
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item ">
-                    <a href="index/PerfilAdm.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="item-description">
-                            Perfil
-                        </span>
-                    </a>
-                </li>
-
-                
-                
-
-                
-            </ul>
-    
-            <button id="open_btn">
-                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
-
-        <div id="logout">
-            <button id="logout_btn">
-                <a href="sairAdm.php">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                <span class="item-description">
-                    Logout
-                </span>
-                <!--NOVO script---->
-                </a>
-            </button>
-        </div>
-    </nav> 
-
-    <main>
-        <div class="titulo">
-            <h1>EstacionaTempo</h1>
-        </div>  
 
 
-         <!--Formulario  da Equipe p/ enviar p o Atualizar -->
-        <div class="form">
-              <form method="POST" action="saveE.php">
-                <div class="input-group">
-                        <div class="input-box">
-                          <label for="car">Nome da equipe</label>
-                            <input  type="text" id="nome_equipe" name="nome_equipe" value="<?php echo $nomeequipe ?>" >
-                        </div>
 
-                        <div class="input-box">
-                          <label for="car">Numero de vagas do estacionamento</label>
-                          <input  type="text" id="qntvaga" name="qntvaga" value="<?php echo  $qntvagas?>" >
-                        </div>
-                    </div>
-
-                      <div class="input-box">
-                        <label for="car">Numero de vagas Fixas Parciais</label>
-                        <input  type="text" name="qntParciais" id="qntParciais" value="<?php echo  $qntParciais ?>" >
-                    </div>
-                    <input type="hidden" name="id" value="<?php echo $id ?>"></input> 
-                
-                    <input class="input-equipe" type="submit" name="updateEquipe" id="updateEquipe">
-            </form>
-            
-        </div>
-
-  </main>  
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="/codigo/index/script.js"></script>
-    
-    <header class="cabecalho">
-
-        
-        <nav class="cabecalho-nav">
-            
-
-        </nav>
-        
-    </header>   
+.container {
+    border: 2px solid #fff;
+    padding: 30px 40px;
+    width: 40%;
+    min-width: 500px;
+  }
   
- </body>
- </html>
+  .new-task-container {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+  }
+  
+  .new-task-container input {
+    flex: 3;
+    font-size: 1rem;
+    border: 2px solid #d1d3d4;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: 500;
+  }
+  
+  .new-task-container input:focus {
+    outline: none;
+    border-color: #41b883;
+  }
+  
+  .new-task-button {
+    flex: 1;
+    border-radius: 5px;
+    font-weight: 500;
+    height: 100%;
+    font-size: 1rem;
+    border: none;
+    background-color: #41b883;
+    color: #fff;
+    padding: 12px;
+    margin-left: 12px;
+    cursor: pointer;
+  }
+  
+  .tasks-container {
+    background-color: #fff;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    margin-top: 6px;
+  }
+  
+  .task-item i {
+    background-color: #41b883;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+  }
+  
+  .task-item i:hover {
+    cursor: pointer;
+  }
+  
+  /* Utilities */
+  .error {
+    border: 2px solid red !important;
+  }
+  
+  .error::placeholder {
+    color: red;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+  }
+  

@@ -13,10 +13,13 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -30,7 +33,7 @@ body {
     display: flex;
     min-height: 100vh;
     background-color: #325573;
-    background-image: url(../images/ad-01\ \(4\).jpeg);
+    background-image: url(../codigo/img/icones/fundo.png);
 }
 
 main {
@@ -45,7 +48,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #F2911B;
+    background-color: #325573;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
@@ -98,7 +101,7 @@ img {
 }
 
 #user_infos span:last-child {
-    color: #6b6b6b;
+    color: #ccc;
     font-size: 12px;
 }
 
@@ -122,12 +125,12 @@ img {
 }
 
 .side-item.active {
-    background-color: #782680;
+    background-color: #a12ba5;
 }
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #e3e9f7;
+    background-color: #a12ba5;
 }
 
 .side-item a {
@@ -135,7 +138,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0a0a0a;
+    color: #ffffff;
 }
 
 .side-item.active a {
@@ -155,7 +158,7 @@ img {
     flex-direction: column;
     gap: 8px;
     list-style: none;
-    border-top: 1px solid #e3e9f7;
+    border-top: 1px solid #fff;
     padding: 5px;
 }
 
@@ -176,8 +179,8 @@ img {
     position: absolute;
     top: 30px;
     right: -10px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #333333;
+    color: #fff;
     border-radius: 100%;
     width: 20px;
     height: 20px;
@@ -201,7 +204,7 @@ img {
     font-size: 14px;
     transition: width .6s;
     height: 0px;
-
+color: #e3e9f7;
 }
 
 #sidebar.open-sidebar {
@@ -281,6 +284,7 @@ img {
 
 }
 
+
 form {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -291,7 +295,7 @@ form {
     margin-left: 40px;
     margin-top: 250px;
     width: 900px fit-content;
-    height: 250px fit-content;
+    height: 450px fit-content;
     box-shadow: 5px 10px #F2911B;
     position: absolute;
     transform: translate(-50%, );
@@ -299,6 +303,7 @@ form {
     overflow: hidden;
     border-radius: 20px;
 }
+
 
 
 
@@ -348,18 +353,7 @@ form {
 
 }
 
-/* ANUNCIOS */
 
-.anuncios {
-    grid-area: anuncios;
-    background: transparent;
-    display: grid;
-    padding: 30px;
-    grid-gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    align-content: start;
-    justify-content: space-around;
-}
 
 @media (max-width: 1000px) {
     .contentForm {
@@ -481,7 +475,7 @@ input[type=password],
 /*separador é a virgula*/
 input[type=email] {
     width: 100%;
-    padding: 10px 250px;
+    padding: 5px 250px;
     border: 1px solid #ffffff;
     /*borda do canto*/
     border-radius: 20px;
@@ -585,7 +579,6 @@ blockquote {
     margin-top: 30px;
 }
 
-@media screen and (max-width: 1094px) {
     .sidebar_content {
         width: 90%;
         height: auto;
@@ -615,7 +608,7 @@ blockquote {
     .gender-input {
         margin-top: 0.5rem;
     }
-}
+
 
 
 .continue-button button {
@@ -637,8 +630,11 @@ blockquote {
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
-
 }
+  
+
+
+
 
  
 </style>
@@ -669,7 +665,7 @@ blockquote {
                         </span>
                     </a>
                 </li>
-                <li class="side-item">
+                <li class="side-item active">
                     <a href="equipes.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
@@ -677,6 +673,8 @@ blockquote {
                         </span>
                     </a>
                 </li>
+
+               
 
                 <li class="side-item ">
                     <a href="index/PerfilAdm.php">
@@ -686,35 +684,6 @@ blockquote {
                         </span>
                     </a>
                 </li>
-
-                <li class="side-item ">
-                    <a href="index/ReservarVagaAdm.php">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="item-description">
-                            Reserva de<br>
-                            vaga
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item">
-                    <a href="index/DisponibilizarVaga.php">
-                        <i class="fa-solid fa-box"></i>
-                        <span class="item-description">
-                            Disponibilizar<br>
-                            vaga
-                        </span>
-                    </a>
-                </li>
-                <li class="side-item">
-                    <a href="Comentários.php">
-                        <i class="fa-solid fa-box"></i>
-                        <span class="item-description">
-                            Comentarios
-                        </span>
-                    </a>
-                </li>
-
                 
             </ul>
     

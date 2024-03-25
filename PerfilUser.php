@@ -28,7 +28,7 @@
     
                 <p id="user_infos">
                     <span class="item-description">
-                        Administrador
+                        Usuário
                     </span>
                     <span class="item-description">
                         Bem-vindo(a)
@@ -36,53 +36,28 @@
                 </p>
             </div>
     
-            <ul id="side_items">
+           
+                
+
                 <li class="side-item ">
-                    <a href="/codigo/index/SolicitaçõesAdm.php">
-                        <i class="fa-solid fa-chart-line"></i>
+                    <a href="sistema.php">
+                        <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
-                            Solicitações
-                        </span>
-                    </a>
-                </li>
-                <li class="side-item">
-                    <a href="/codigo/index/EquipeUsuario.php">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="item-description">
-                            Equipe
+                            Início<br>
+        
                         </span>
                     </a>
                 </li>
 
-                <li class="side-item ">
-                    <a href="/codigo/index/PerfilUser.php">
+               
+                <li class="side-item active">
+                    <a href="#">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Perfil
                         </span>
                     </a>
                 </li>
-
-                <li class="side-item ">
-                    <a href="/codigo/index/ReservarVagaUsuario.php">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="item-description">
-                            Reserva de<br>
-                            vaga
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item active">
-                    <a href="/codigo/index/DisponibilizarVaga.php">
-                        <i class="fa-solid fa-box"></i>
-                        <span class="item-description">
-                            Disponibilizar<br>
-                            vaga
-                        </span>
-                    </a>
-                </li>
-                
                 
             </ul>
     
@@ -114,42 +89,24 @@
                 <p class="destaque"></p>
             </section>
             <section class="contentFormReserva">
-    
-    
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                               <th>Nome</th>
-                               <th>Telefone</th>
-                               <th>Cpf</th>
-                               <th>Idade</th>
-                               <th>Veiculo</th>
-                               <th>Cor</th>
-                               <th>Placa</th>
-                               <th>Prioridade</th>
-                               <th>Email</th>
-                               <th>Senha</th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody>
+    <form >
+     
                            
                             <?php // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
                               while($user_data = mysqli_fetch_assoc($resultado)) // fetch_assoc - serve p retornar uma matriz sociativa 
                                {
                                     echo "<tr>";
-                                    echo "<td>".$user_data['id']."</td>";
-                                     echo "<td>".$user_data['nome']."</td>";
-                                     echo "<td>".$user_data['telefone']."</td>";
-                                     echo "<td>".$user_data['cpf']."</td>";
-                                     echo "<td>".$user_data['idade']."</td>";
-                                     echo "<td>".$user_data['veiculo']."</td>";
-                                     echo "<td>".$user_data['cor']."</td>";              
-                                     echo "<td>".$user_data['placa']."</td>";
-                                     echo "<td>".$user_data['prioridades']."</td>";
-                                     echo "<td>".$user_data['email']."</td>";
-                                     echo "<td>".$user_data['senha']."</td>";
+                                    echo "<td>ID:" .$user_data['id']."</td><br>";
+                                     echo "<td>Nome:" .$user_data['nome']."</td><br>";
+                                     echo "<td>Celular:" .$user_data['telefone']."</td><br>";
+                                     echo "<td>Cpf:" .$user_data['cpf']."</td><br>";
+                                     echo "<td>Idade".$user_data['idade']."</td><br>";
+                                     echo "<td>Veiculo:".$user_data['veiculo']."</td><br>";
+                                     echo "<td>Cor:".$user_data['cor']."</td><br>";              
+                                     echo "<td>Placa:".$user_data['placa']."</td><br>";
+                                     echo "<td>Prioridade:".$user_data['prioridades']."</td><br>";
+                                     echo "<td>Email:".$user_data['email']."</td><br>";
+                                     echo "<td>Senha:".$user_data['senha']."</td><br>";
                                      // passando o id do usuario para atualizar no href 
                                      echo "<td>
                                             <a class='bnt bnt-primary' href='edicao.php?id=$user_data[id]'> 
@@ -167,10 +124,8 @@
                                 echo "<tr>";
                                }
                             ?>
-                        </tbody>
-                    </table>
-                
-            </section>
+            
+            </form>
         </main>
       
         

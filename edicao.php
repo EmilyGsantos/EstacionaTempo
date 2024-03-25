@@ -71,8 +71,7 @@
             </div>
 
        
-               
-            <!--Arrumar-->
+           
         <div class="input-box">
                 <label for="car">Tipo do veiculo </label>
                 <select id="veiculo" name="veiculo" value="<?php echo $veiculo?>">

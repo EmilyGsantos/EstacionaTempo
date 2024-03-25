@@ -1,16 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<!--Passar estilização para equipes.php!!--->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/codigo/css/funcoes.css">
+    <link rel="stylesheet" href="/NovoPHPEstacionamento/sidebar-main-ADM/src/css/style.css">
+  
     <title>Solicitações Administrador</title>
 </head>
 <style>
+
+.container {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+
+.form-image img {
+    width: 31rem;
+}
+
+.form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.login-button button {
+    border: none;
+    background-color: #59252E;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button:hover {
+    background-color: #e0730df1;
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.Home button {
+    border: none;
+    background-color: #59252E;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Home button:hover {
+    background-color: #e0730df1;
+}
+
+.Home button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+.home {
+    display: flex;
+    align-items: center;
+}
+/*linha em baixo do cadastrar*/
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #e0730df1;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+    outline: 1px solid #59252E;
+}
+
+.input-box label,
+.gender-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.input-box input::placeholder {
+    color: #000000be;
+}
+
+.gender-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 .5rem;
+}
+
+.gender-input {
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input {
+    margin-right: 0.35rem;
+}
+
+.gender-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.continue-button button {
+    width: 100%;
+    margin-top: 2.5rem;
+    border: none;
+    background-color: #59252E;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.continue-button button:hover {
+    background-color: #e0730df1;
+}
+
+.continue-button button a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media screen and (max-width: 1330px) {
+    .form-image {
+        display: none;
+    }
+    .container {
+        width: 50%;
+    }
+    .form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+    .gender-inputs {
+        margin-top: 2rem;
+    }
+    .gender-group {
+        flex-direction: column;
+    }
+    .gender-title h6 {
+        margin: 0;
+    }
+    .gender-input {
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -20,14 +240,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
+    
 }
 
 body {
     display: flex;
     min-height: 100vh;
     background-color: #325573;
-    background-image: url(../codigo/img/icones/fundo.png);
+    background-image: url(../images/ad-01\ \(4\).jpeg);
 }
 
 main {
@@ -35,7 +255,7 @@ main {
     position: fixed;
     z-index: 1;
     padding-left: calc(82px + 20px);
-
+    
 }
 
 #sidebar {
@@ -53,7 +273,7 @@ main {
 
 #sidebar_content {
     padding: 12px;
-
+    
 }
 
 #user {
@@ -73,6 +293,7 @@ main {
 #user_infos {
     display: flex;
     flex-direction: column;
+    color: #ccc;
 }
 
 img {
@@ -95,7 +316,7 @@ img {
 }
 
 #user_infos span:last-child {
-    color: #ccc;
+    color: #ffffff;
     font-size: 12px;
 }
 
@@ -119,12 +340,12 @@ img {
 }
 
 .side-item.active {
-    background-color: #a12ba5;
+    background-color: #782680;
 }
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #a12ba5;
+    background-color: #F2911B;
 }
 
 .side-item a {
@@ -152,7 +373,7 @@ img {
     flex-direction: column;
     gap: 8px;
     list-style: none;
-    border-top: 1px solid #fff;
+    border-top: 1px solid #061f58;
     padding: 5px;
 }
 
@@ -166,15 +387,15 @@ img {
     border-radius: 8px;
     text-align: start;
     cursor: pointer;
-    background-color: transparent;
+    background-color: #fafafa;
 }
 
 #open_btn {
     position: absolute;
     top: 30px;
     right: -10px;
-    background-color: #333333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     border-radius: 100%;
     width: 20px;
     height: 20px;
@@ -198,7 +419,7 @@ img {
     font-size: 14px;
     transition: width .6s;
     height: 0px;
-color: #e3e9f7;
+
 }
 
 #sidebar.open-sidebar {
@@ -246,19 +467,19 @@ color: #e3e9f7;
 .cabecalho {
     background-color: none;
     /*definindo cor de fundo*/
-    width: 1525px;
+    width: 1325px;
     height: 100px;
     /*definindo altura*/
     display: flex;
     /*definindo largura*/
     justify-content: space-around;
     /*dando espaço entre os itens no cabecalho*/
-    border: 3px solid #fdfdfd;
+    border: 3px solid #fdfdfd ;
     /*definindo cor da borda*/
     border-radius: 10px;
-    BOX-shadow: 0 0 15px #f827ff, inset 0 0 15px #f827ff;
+    BOX-shadow: 0 0 15px #f827ff, inset 0 0 15px #f827ff ;
     text-shadow: 0 0 15px #f827ff;
-    padding-top: 90px;
+    
 }
 
 
@@ -276,26 +497,6 @@ color: #e3e9f7;
     padding-left: 500px;
     text-shadow: 0 0 15px #eef21b;
 
-}
-
-
-form {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-color: #59252E;
-    border: 2px solid #ffffff;
-    padding: 15px;
-    margin: 20px auto;
-    margin-left: 40px;
-    margin-top: 250px;
-    width: 900px fit-content;
-    height: 450px fit-content;
-    box-shadow: 5px 10px #F2911B;
-    position: absolute;
-    transform: translate(-50%, );
-    display: flex;
-    overflow: hidden;
-    border-radius: 20px;
 }
 
 
@@ -327,7 +528,6 @@ form {
     padding-top: 0px;
 
 }
-
 .contentFormReserva {
     display: grid;
     max-width: 500px;
@@ -336,7 +536,6 @@ form {
     padding-left: 390px;
 
 }
-
 .contentFormPerfil {
     display: grid;
     max-width: 500px;
@@ -346,14 +545,22 @@ form {
     padding-top: 2px;
 
 }
+/* ANUNCIOS */
 
-
-
+.anuncios {
+    grid-area: anuncios;
+    background: transparent;
+    display: grid;
+    padding: 30px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-content: start;
+    justify-content: space-around;
+  }
 @media (max-width: 1000px) {
     .contentForm {
         grid-template-columns: auto;
     }
-
     .contentFormB {
         grid-template-columns: auto;
     }
@@ -370,7 +577,6 @@ form {
     grid-column: 1 / -1;
     color: #fff;
 }
-
 .col-wideFormB {
     /* A coluna vai do 1 até o último, por isso -1, assim pega todas as colunas */
     grid-column: 1 / -1;
@@ -385,8 +591,7 @@ form {
     top: 96%;
     left: 55%;
 }
-
-.conteudo {
+.conteudo{
     width: 400px;
     height: 500px;
     border: 1px solid black;
@@ -394,8 +599,7 @@ form {
     padding: 10px;
     background-color: lightgreen;
 }
-
-.conteudoB {
+.conteudoB{
     width: 400px;
     height: 500px;
     border: 1px solid black;
@@ -403,101 +607,28 @@ form {
     padding: 10px;
     background-color: lightgreen;
 }
+    /*titulo cadastar*/
+    .buttonD {
+        position: absolute;
+        top: 140%;
+        left: 110%;
+        transform: translate(-50%, -50%);
+        padding: 15px 43px;
+        font-size: 20px;
+        background: transparent;
+        border: 2px solid #eef21b;
+        color: #eef21b;
+        cursor: pointer;
+        border-radius: 50px;
+        width: fixed;
+        height: fixed;
+    }
 
-/*titulo cadastar*/
-.buttonD {
-    position: absolute;
-    top: 140%;
-    left: 110%;
-    transform: translate(-50%, -50%);
-    padding: 15px 43px;
-    font-size: 20px;
-    background: transparent;
-    border: 2px solid #eef21b;
-    color: #eef21b;
-    cursor: pointer;
-    border-radius: 50px;
-    width: fixed;
-    height: fixed;
-}
+    .buttonD:hover {
+        BOX-shadow: 0 0 15px #eef21b, inset 0 0 15px #eef21b;
+        text-shadow: 0 0 15px #eef21b;
+    }
 
-.buttonD:hover {
-    BOX-shadow: 0 0 15px #eef21b, inset 0 0 15px #eef21b;
-    text-shadow: 0 0 15px #eef21b;
-}
-
-/*titulo cadastar*/
-.buttonK {
-    position: absolute;
-    top: 140%;
-    left: 110%;
-    transform: translate(-50%, -50%);
-  
-    font-size: 20px;
-    
-    border: none;
-    color: #ccc;
-    
-    width: fixed;
-    height: fixed;
-    background-color: #59252E;
-    padding: 0.62rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.buttonK:hover {
-    background-color: #e0730df1;
-}
-
-.buttonK:hover a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #fff;
-}
-
-label {
-    /*nome do formulario*/
-    display: block;
-    margin-bottom: 10px;
-    /*margem em baixo*/
-}
-
-input[type=text],
-input[type=password],
-/*separador é a virgula*/
-input[type=email] {
-    width: 100%;
-    padding: 5px 250px;
-    border: 1px solid #ffffff;
-    /*borda do canto*/
-    border-radius: 20px;
-}
-
-.div i {
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    right: 5%;
-    color: #ccc;
-
-}
-
-select {
-    width: 100%;
-    /*sugestão etc*/
-    padding: 10px;
-}
-
-input[type=submit] {
-    display: block;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #ffffff;
-    color: #333333;
-
-}
 
 .esqueci {
     color: rgba(237, 245, 120, 0.911);
@@ -522,8 +653,8 @@ input[type=submit] {
     background: transparent;
     border-radius: 3px;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, .5);
-
-
+    
+    
 }
 
 .relogio div {
@@ -538,7 +669,7 @@ input[type=submit] {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
     border-radius: 7px;
     letter-spacing: 3px;
-
+    
 }
 
 .relogio span {
@@ -549,16 +680,14 @@ input[type=submit] {
 .relogio span.tempo {
     font-size: 10px;
 }
-
 p,
 h1,
 ul,
 li,
 blockquote {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
-
 .citacao p {
     font-size: 1.5em;
     font-style: italic;
@@ -567,45 +696,11 @@ blockquote {
     margin: 0 auto;
     color: white;
     margin-right: 50px;
-}
-
-.informacoes p+p {
+  }
+  .informacoes p+p {
     margin-top: 30px;
-}
-
-    .sidebar_content {
-        width: 90%;
-        height: auto;
-    }
-
-    .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-    }
-
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-
-    .gender-group {
-        flex-direction: column;
-    }
-
-    .gender-title h6 {
-        margin: 0;
-    }
-
-    .gender-input {
-        margin-top: 0.5rem;
-    }
-
-
-
-.continue-button button {
+  }
+  .continue-button button {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
@@ -625,20 +720,14 @@ blockquote {
     font-weight: 500;
     color: #fff;
 }
-  
 
-
-
-
-
-  
 </style>
 <body>
 
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
-                <img src="/codigo/img/Ellipse 1.png" id="user_avatar" alt="Avatar">
+            <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
 
                 <p id="user_infos">
                     <span class="item-description">
@@ -659,8 +748,8 @@ blockquote {
                         </span>
                     </a>
                 </li>
-                <li class="side-item">
-                    <a href="/codigo/index/EquipeAdimistrador.php">
+                <li class="side-item ">
+                        <a href="../equipes.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Equipe
@@ -668,31 +757,15 @@ blockquote {
                     </a>
                 </li>
 
+               
+
+
+                
                 <li class="side-item ">
                     <a href="/codigo/index/PerfilAdm.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Perfil
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item ">
-                    <a href="/codigo/index/ReservarVagaAdm.php">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="item-description">
-                            Reserva de<br>
-                            vaga
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item">
-                    <a href="/codigo/index/DisponibilizarVaga.php">
-                        <i class="fa-solid fa-box"></i>
-                        <span class="item-description">
-                            Disponibilizar<br>
-                            vaga
                         </span>
                     </a>
                 </li>
@@ -706,7 +779,7 @@ blockquote {
 
         <div id="logout">
             <button id="logout_btn">
-                <a href="sairAdm.php">
+                <a href= "sairAdm.php">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span class="item-description">
                         Logout
@@ -720,6 +793,7 @@ blockquote {
     <main>
         <div class="titulo">
             <h1>EstacionaTempo</h1><br>
+            <br>
             <img src="/codigo/img/Rectangle 82.png" alt="Avatar">
             <div class="continue-button">
                 <button><a href="/codigo/index/ListaDeUsuarios.php">Ver Lista de Usuários</a> </button>
@@ -730,9 +804,11 @@ blockquote {
 
 
     </main>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/codigo/index/script.js"></script>
     
+
     <header class="cabecalho">
 
 
@@ -740,6 +816,7 @@ blockquote {
 
 
         </nav>
+        
     </header>
 
 

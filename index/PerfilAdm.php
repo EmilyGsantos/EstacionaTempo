@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="side-item">
-                    <a href="/codigo/index/EquipeAdimistrador.php">
+                    <a href="../equipes.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Equipe
@@ -52,36 +52,16 @@
                     </a>
                 </li>
 
+                
+                
                 <li class="side-item active">
-                    <a href="/codigo/index/PerfilAdm">
+                    <a href="#">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Perfil
                         </span>
                     </a>
                 </li>
-
-                <li class="side-item ">
-                    <a href="/codigo/index/ReservarVagaAdm.php">
-                        <i class="fa-solid fa-bell"></i>
-                        <span class="item-description">
-                            Reserva de<br>
-                            vaga
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item">
-                    <a href="/codigo/index/DisponibilizarVaga.php">
-                        <i class="fa-solid fa-box"></i>
-                        <span class="item-description">
-                            Disponibilizar<br>
-                            vaga
-                        </span>
-                    </a>
-                </li>
-                
-
                 
             </ul>
     
@@ -108,26 +88,27 @@
             <h1>EstacionaTempo</h1>
 
        </div> <br>
-       <form action="">
-            <?php // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
+       <form >
+       <?php // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
                   while($Adm = mysqli_fetch_assoc($resultAdm)) // fetch_assoc - serve p retornar uma matriz sociativa 
-                   {
+                   {    
+                           
                         echo "<tr>";
-                        echo "<td>".$Adm['id']."</td>";
-                         echo "<td>".$Adm['nomeADM']."</td>";
-                         echo "<td>".$Adm['telefoneADM']."</td>";
-                         echo "<td>".$Adm['idadeADM']."</td>";
-                         echo "<td>".$Adm['emailADM']."</td>";
-                         echo "<td>".$Adm['senhaADM']."</td>";
+                        echo "<td>ID:".$Adm['id']."</td><br>";
+                         echo "<td>Nome: ".$Adm['nomeADM']."</td><br>";
+                         echo "<td>Celeular: ".$Adm['telefoneADM']."</td><br>";
+                         echo "<td>Idade: ".$Adm['idadeADM']."</td><br>";
+                         echo "<td>Email: ".$Adm['emailADM']."</td><br>";
+                         echo "<td>Senha: ".$Adm['senhaADM']."</td><br>";
                          // passando o id do usuario para atualizar no href 
                          echo "<td>
-                                <a class='bnt bnt-primary' href='edicao.php?id=$Adm[id]'> 
+                                <a class='bnt bnt-primary' href='../edicaoAdm.php?id=$Adm[id]'> 
                                     <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class= 'bi bi-pencil-square' viewBox='0 0 16 16'>
                                         <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
                                         <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z'>
                                     </svg>
                                 <a/>
-                                <a class='bnt bnt-primary' href='delete.php?id=$Adm[id]'> 
+                                <a class='bnt bnt-primary' href='../deleteAdm.php?id=$Adm[id]'> 
                                     <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash-fill' viewBox='0 0 16 16'>
                                     <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0'/>
                                 </svg>
@@ -135,11 +116,7 @@
                                 </td>";
                     echo "<tr>";
                    }
-                ?>
-
-         
-          
-    
+                ?> 
     </main>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

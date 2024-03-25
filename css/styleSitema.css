@@ -1,28 +1,4 @@
-<?php
-  //Editar Equipes //    
-  if(!empty($_GET['id']))
-  {
-      include_once('DAO/dao.php');
-      
-          $id = $_GET['id'];
-          $sqlSelect = "SELECT * FROM Equipe WHERE id=$id";
-
-          $result = $conexao->query($sqlSelect);
-
-          if($result->num_rows > 0)
-           {
-              while($equipes_see = mysqli_fetch_assoc($result))
-              {
-                    $nomeequipe = $equipes_see['nome_equipe'];
-                    $qntvagas = $equipes_see['qntvaga'];
-                    $qntParciais =$equipes_see ['qntParciais'];
-              }// fim do while
-
-            } // fim do while
-    }// fim do if Editar equipe
-  ?>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -210,11 +186,12 @@ img {
 
 }
 
+
 #sidebar.open-sidebar {
     min-width: 15%;
 }
 
-#sidebar.open-sidebar .item-description {
+#sidebar.open-sidebar .item-description{
     width: 150px;
     height: auto;
 }
@@ -294,12 +271,12 @@ form {
     border: 2px solid #ffffff;
     padding: 15px;
     margin: 20px auto;
-    margin-left: 100px;
+    margin-left: 40px;
     margin-top: 250px;
     width: 900px fit-content;
     height: 250px fit-content;
     box-shadow: 5px 10px #F2911B;
-    position: center;
+    position: absolute;
     transform: translate(-50%, );
     display: flex;
     overflow: hidden;
@@ -544,7 +521,20 @@ input[type=submit] {
 
 }
 
+.relogio div {
+    height: 170px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(245, 137, 15, 0.822);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .7);
+    border-radius: 7px;
+    letter-spacing: 3px;
 
+}
 
 .relogio span {
     font-weight: bolder;
@@ -555,7 +545,10 @@ input[type=submit] {
     font-size: 10px;
 }
 
-
+p,
+h1,
+ul,
+li,
 blockquote {
     padding: 0px;
     margin: 0px;
@@ -605,6 +598,7 @@ blockquote {
     .gender-input {
         margin-top: 0.5rem;
     }
+    
 }
 
 
@@ -627,135 +621,4 @@ blockquote {
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
-
 }
-
-
- 
-</style>
-
- 
- <!DOCTYPE html>
- <html lang="pt-br">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EditarEquipe</title>
- </head>
- <body>
-
- <nav id="sidebar">
-        <div id="sidebar_content">
-            <div id="user">
-            <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
-    
-                <p id="user_infos">
-                    <span class="item-description">
-                        Administrador
-                    </span>
-                    <span class="item-description">
-                        Bem-vindo(a)
-                    </span>
-                </p>
-            </div>
-    
-            <ul id="side_items">
-                <li class="side-item ">
-                    <a href="index/SolicitaçõesAdm.php">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span class="item-description">
-                            Solicitações
-                        </span>
-                    </a>
-                </li>
-                <li class="side-item">
-                    <a href="equipes.php">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="item-description">
-                            Equipe
-                        </span>
-                    </a>
-                </li>
-
-                <li class="side-item ">
-                    <a href="index/PerfilAdm.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="item-description">
-                            Perfil
-                        </span>
-                    </a>
-                </li>
-
-                
-                
-
-                
-            </ul>
-    
-            <button id="open_btn">
-                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
-
-        <div id="logout">
-            <button id="logout_btn">
-                <a href="sairAdm.php">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                <span class="item-description">
-                    Logout
-                </span>
-                <!--NOVO script---->
-                </a>
-            </button>
-        </div>
-    </nav> 
-
-    <main>
-        <div class="titulo">
-            <h1>EstacionaTempo</h1>
-        </div>  
-
-
-         <!--Formulario  da Equipe p/ enviar p o Atualizar -->
-        <div class="form">
-              <form method="POST" action="saveE.php">
-                <div class="input-group">
-                        <div class="input-box">
-                          <label for="car">Nome da equipe</label>
-                            <input  type="text" id="nome_equipe" name="nome_equipe" value="<?php echo $nomeequipe ?>" >
-                        </div>
-
-                        <div class="input-box">
-                          <label for="car">Numero de vagas do estacionamento</label>
-                          <input  type="text" id="qntvaga" name="qntvaga" value="<?php echo  $qntvagas?>" >
-                        </div>
-                    </div>
-
-                      <div class="input-box">
-                        <label for="car">Numero de vagas Fixas Parciais</label>
-                        <input  type="text" name="qntParciais" id="qntParciais" value="<?php echo  $qntParciais ?>" >
-                    </div>
-                    <input type="hidden" name="id" value="<?php echo $id ?>"></input> 
-                
-                    <input class="input-equipe" type="submit" name="updateEquipe" id="updateEquipe">
-            </form>
-            
-        </div>
-
-  </main>  
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="/codigo/index/script.js"></script>
-    
-    <header class="cabecalho">
-
-        
-        <nav class="cabecalho-nav">
-            
-
-        </nav>
-        
-    </header>   
-  
- </body>
- </html>
