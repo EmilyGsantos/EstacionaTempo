@@ -53,6 +53,29 @@
                 </li>
 
                 
+<<<<<<< HEAD
+=======
+
+                <li class="side-item ">
+                    <a href="/codigo/index/ReservarVagaAdm.php">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Reserva de<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="/codigo/index/DisponibilizarVaga.php">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Disponibilizar<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
                 
                 <li class="side-item active">
                     <a href="#">

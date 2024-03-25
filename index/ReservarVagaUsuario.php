@@ -1,25 +1,14 @@
-<?php
-  include_once('DAO/dao.php');
-
-  // Consulta da Equipe //
-  $sql = "SELECT * FROM Equipe ORDER BY id DESC";
-  $resultEquipe = $conexao->query($sql);
-
- ?>
-  
- 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/codigo/css/styleUsuario.css">
+    <title>Reservar Vaga Usuario</title>
 </head>
 <style>
- 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -33,7 +22,7 @@ body {
     display: flex;
     min-height: 100vh;
     background-color: #325573;
-    background-image: url(../codigo/img/icones/fundo.png);
+    background-image: url(../images/ad-01\ \(4\).jpeg);
 }
 
 main {
@@ -48,7 +37,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #325573;
+    background-color: #F2911B;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
@@ -101,7 +90,7 @@ img {
 }
 
 #user_infos span:last-child {
-    color: #ccc;
+    color: #6b6b6b;
     font-size: 12px;
 }
 
@@ -125,12 +114,12 @@ img {
 }
 
 .side-item.active {
-    background-color: #a12ba5;
+    background-color: #782680;
 }
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #a12ba5;
+    background-color: #e3e9f7;
 }
 
 .side-item a {
@@ -138,7 +127,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #0a0a0a;
 }
 
 .side-item.active a {
@@ -158,7 +147,7 @@ img {
     flex-direction: column;
     gap: 8px;
     list-style: none;
-    border-top: 1px solid #fff;
+    border-top: 1px solid #e3e9f7;
     padding: 5px;
 }
 
@@ -179,8 +168,8 @@ img {
     position: absolute;
     top: 30px;
     right: -10px;
-    background-color: #333333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     border-radius: 100%;
     width: 20px;
     height: 20px;
@@ -204,7 +193,7 @@ img {
     font-size: 14px;
     transition: width .6s;
     height: 0px;
-color: #e3e9f7;
+
 }
 
 #sidebar.open-sidebar {
@@ -284,7 +273,6 @@ color: #e3e9f7;
 
 }
 
-
 form {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -295,7 +283,7 @@ form {
     margin-left: 40px;
     margin-top: 250px;
     width: 900px fit-content;
-    height: 450px fit-content;
+    height: 250px fit-content;
     box-shadow: 5px 10px #F2911B;
     position: absolute;
     transform: translate(-50%, );
@@ -303,7 +291,6 @@ form {
     overflow: hidden;
     border-radius: 20px;
 }
-
 
 
 
@@ -353,7 +340,18 @@ form {
 
 }
 
+/* ANUNCIOS */
 
+.anuncios {
+    grid-area: anuncios;
+    background: transparent;
+    display: grid;
+    padding: 30px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-content: start;
+    justify-content: space-around;
+}
 
 @media (max-width: 1000px) {
     .contentForm {
@@ -475,7 +473,7 @@ input[type=password],
 /*separador é a virgula*/
 input[type=email] {
     width: 100%;
-    padding: 5px 250px;
+    padding: 10px 250px;
     border: 1px solid #ffffff;
     /*borda do canto*/
     border-radius: 20px;
@@ -579,6 +577,7 @@ blockquote {
     margin-top: 30px;
 }
 
+@media screen and (max-width: 1094px) {
     .sidebar_content {
         width: 90%;
         height: auto;
@@ -608,7 +607,7 @@ blockquote {
     .gender-input {
         margin-top: 0.5rem;
     }
-
+}
 
 
 .continue-button button {
@@ -631,16 +630,9 @@ blockquote {
     font-weight: 500;
     color: #fff;
 }
-  
-
-
-
-
- 
 </style>
-
 <body>
-		 
+
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
@@ -657,29 +649,19 @@ blockquote {
             </div>
     
             <ul id="side_items">
-                <li class="side-item ">
-                    <a href="index/SolicitaçõesAdm.php">
+            <li class="side-item ">
+                    <a href="SolicitaçõesUsuario.php">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Solicitações
                         </span>
                     </a>
                 </li>
-                <li class="side-item active">
-                    <a href="equipes.php">
-                        <i class="fa-solid fa-gear"></i>
-                        <span class="item-description">
-                            Equipe
-                        </span>
-                    </a>
-                </li>
+                
+                
 
-               
-
-                <li class="side-item ">
-<<<<<<< HEAD
-=======
-                    <a href="index/ReservarVagaAdm.php">
+                <li class="side-item active ">
+                    <a href="#">
                         <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
                             Reserva de<br>
@@ -688,8 +670,8 @@ blockquote {
                     </a>
                 </li>
 
-                <li class="side-item">
-                    <a href="index/DisponibilizarVaga.php">
+                <li class="side-item ">
+                    <a href="DisponibilizarVagaUsuario.php">
                         <i class="fa-solid fa-box"></i>
                         <span class="item-description">
                             Disponibilizar<br>
@@ -697,16 +679,14 @@ blockquote {
                         </span>
                     </a>
                 </li>
-                <li class="side-item ">
->>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
-                    <a href="index/PerfilAdm.php">
+                <li class="side-item">
+                    <a href="PerfilUser.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Perfil
                         </span>
                     </a>
                 </li>
-                
             </ul>
     
             <button id="open_btn">
@@ -716,7 +696,7 @@ blockquote {
 
         <div id="logout">
             <button id="logout_btn">
-                <a href="sairAdm.php">
+                <a href="../sair.php">
                     <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="item-description">
                     Logout
@@ -725,55 +705,82 @@ blockquote {
                 </a>
             </button>
         </div>
-    </nav>   
+    </nav>
 
     <main>
-        <div class="titulo">
-            <h1>EstacionaTempo</h1><br><br>
-            
-         
-            <h2>Edite sua Equipe</h2><br>
-         
-            <!--Retorna TODAS AS EQUIPES Criadas pelos Administradores Aqui estão os nomes das Equipes Criadas e o icone de atualizar --->
-     <?php 
-        while($equipes_see = mysqli_fetch_assoc($resultEquipe)) 
-          {
-            echo "<tr>";
-                      echo "<td>".$equipes_see['nome_equipe']."</td>";               
-                      echo "<td>
-                            <a class='bnt bnt-primary' href='edicaoEquipes.php?id=$equipes_see[id]'> 
-                                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class= 'bi bi-pencil-square' viewBox='0 0 16 16'>
-                                <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
-                                <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z'>
-                              </svg>
-                          <a/>
-                      </td>";
-            echo "<tr>";
-          }// fim do while 
-        ?>
-    </tbody> 
-		</div>	
-    
-    </main>
 
+        <p class="destaque">
+        <div class="titulo">
+            <h1>EstacionaTempo</h1>
+            <button class="buttonD" onclick="toggle('conteudo')">Enviar e aguardar o retorno</button>
+        </div>
+        </p>
+        
+        <section class="contentFormReserva">
+
+
+            <form class="col-wideForm">
+
+
+                <p class="destaque"></p>
+                <div class="informacoes">
+                    <h4>
+                        
+                        <label for="assunto"><b>Dia da semana que há vagas disponiveis</b></label>
+                        <select name="assunto" id="assunto">
+                            <option value="reclamação"><a href="/Teste/wildbeast-inicio copy/index.html">Final de Semana</option>
+                            </a>
+                            <option value="dúvida">Segunda</option>
+                            <option value="dúvida">Terça</option>
+                            <option value="dúvida">Quarta</option>
+                            <option value="dúvida">Quinta</option>
+                            <option value="dúvida">Sexta</option>
+                        </select><br><br>
+                        <label for="assunto"><b>Horários disponiveis para reserva</b></label>
+                        <select name="assunto" id="assunto">
+                            <option value="reclamação"><a href="/Teste/wildbeast-inicio copy/index.html">Matutino</option>
+                            </a>
+                            <option value="dúvida">Vespertino</option>
+                            <option value="dúvida">Noturno</option>
+                            
+                        </select><br>
+                       
+                    </h4>
+                </div>
+
+            </form>
+            <div class="relogio">
+                <div>
+                    <span id="horas">00</span>
+                    <span class="tempo">Horas</span>
+                </div>
+
+                <div>
+                    <span id="minutos">00</span>
+                    <span class="tempo">Minutos</span>
+                </div>
+
+                <div>
+                    <span id="segundos">00</span>
+                    <span class="tempo">Segundos</span>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/codigo/index/script.js"></script>
-    
     <header class="cabecalho">
 
-        
+
         <nav class="cabecalho-nav">
-            
+
 
         </nav>
-        
+
     </header>
 
-	
-   
-
 </body>
+
 </html>
-
-   
-

@@ -625,6 +625,7 @@ blockquote {
     font-weight: 500;
     color: #fff;
 }
+<<<<<<<< HEAD:index/style.css
 .divSearch {
     display: flex;
     flex-direction: column;
@@ -640,6 +641,107 @@ blockquote {
     padding-left: 90px;
     max-height: fit-content;
 }
+========
+
+</style>
+<body>
+
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+            <a href="#" class="logo"><img src="/codigo/img/Ellipse 1.png" alt="Estacionatempo"></a>
+
+                <p id="user_infos">
+                    <span class="item-description">
+                        Administrador
+                    </span>
+                    <span class="item-description">
+                        Bem-vindo(a)
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+                <li class="side-item ">
+                    <a href="/codigo/index/SolicitaçõesAdm.php">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Solicitações
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item active">
+                    <a href="../equipes.php">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Equipe
+                        </span>
+                    </a>
+                </li>
+
+             
+                <li class="side-item ">
+                    <a href="/codigo/index/ReservarVagaAdm.php">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Reserva de<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="/codigo/index/DisponibilizarVaga.php">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Disponibilizar<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+                
+                <li class="side-item ">
+                    <a href="/codigo/index/PerfilAdm.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn">
+                <a href= "sairAdm.php">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-description">
+                        Logout
+                    </span>
+                    <!--NOVO script---->
+                </a>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+    <div class="titulo">
+            <h1>EstacionaTempo</h1>
+          </div>
+       
+
+        
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/codigo/index/scriptGerenciamentodepa.js"></script>
+>>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f:index/EquipeAdimistrador.php
     
 
 

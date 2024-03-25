@@ -12,7 +12,11 @@
        unset($_SESSION ['emailADM']); // unset  destruir os dados que nao existem 
        unset($_SESSION ['senhaADM']);
        header('Location: loginAdm.php');
+<<<<<<< HEAD
     }
+=======
+     }
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
    
 ?>
 <!DOCTYPE html>
@@ -757,7 +761,17 @@ blockquote {
             </div>
 
             <ul id="side_items">
+<<<<<<< HEAD
                
+=======
+                <li class="side-item ">
+                    <a href="/codigo/index/SolicitaçõesAdm.php">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Solicitações
+                        </span>
+                    </a>
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
                 </li>
                 <li class="side-item active">
                     <a href="../equipes.php">
@@ -768,6 +782,7 @@ blockquote {
                     </a>
                 </li>
 
+<<<<<<< HEAD
                 
                 
                 <li class="side-item ">
@@ -780,6 +795,39 @@ blockquote {
                 </li>
 
 
+=======
+             
+                <li class="side-item ">
+                    <a href="/codigo/index/ReservarVagaAdm.php">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Reserva de<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="/codigo/index/DisponibilizarVaga.php">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Disponibilizar<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+                
+                <li class="side-item ">
+                    <a href="/codigo/index/PerfilAdm.php">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+
+
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
             </ul>
 
             <button id="open_btn">

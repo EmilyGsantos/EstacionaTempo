@@ -40,16 +40,46 @@
                 
 
                 <li class="side-item ">
+<<<<<<< HEAD
                     <a href="sistema.php">
                         <i class="fa-solid fa-bell"></i>
                         <span class="item-description">
                             Início<br>
         
+=======
+                    <a href="/codigo/index/SolicitaçõesUsuario.php">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Solicitações
+                        </span>
+                    </a>
+                </li>
+                
+
+                <li class="side-item ">
+                    <a href="/codigo/index/ReservarVagaUsuario.php">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Reserva de<br>
+                            vaga
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
                         </span>
                     </a>
                 </li>
 
+<<<<<<< HEAD
                
+=======
+                <li class="side-item">
+                    <a href="/codigo/index/DisponibilizarVaga.php">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Disponibilizar<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
                 <li class="side-item active">
                     <a href="#">
                         <i class="fa-solid fa-user"></i>
@@ -89,8 +119,31 @@
                 <p class="destaque"></p>
             </section>
             <section class="contentFormReserva">
+<<<<<<< HEAD
     <form >
      
+=======
+    <form action="">
+    
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                               <th>Nome</th>
+                               <th>Telefone</th>
+                               <th>Cpf</th>
+                               <th>Idade</th>
+                               <th>Veiculo</th>
+                               <th>Cor</th>
+                               <th>Placa</th>
+                               <th>Prioridade</th>
+                               <th>Email</th>
+                               <th>Senha</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
                            
                             <?php // o while informa que o bloco de codigo deve ser repetido enquanto a condição for vdd.
                               while($user_data = mysqli_fetch_assoc($resultado)) // fetch_assoc - serve p retornar uma matriz sociativa 
@@ -124,7 +177,14 @@
                                 echo "<tr>";
                                }
                             ?>
+<<<<<<< HEAD
             
+=======
+                        </tbody>
+                    </table>
+                
+            </section>
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
             </form>
         </main>
       

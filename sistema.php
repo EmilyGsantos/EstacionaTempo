@@ -24,7 +24,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="/codigo/css/styleSitema.css">
+=======
+    <link rel="stylesheet" href="/codigo/css/styleUsuario.css">
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
     <title>Sistema Usuario</title>
 </head>
 
@@ -53,6 +57,28 @@
     
                 
                 <li class="side-item">
+<<<<<<< HEAD
+=======
+                    <a href="index\ReservarVagaUsuario.php">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Reserva de<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="index/DisponibilizarVagaUsuario.php">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Disponibilizar<br>
+                            vaga
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
                     <a href="PerfilUser.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
@@ -94,6 +120,7 @@
                 $sql = "SELECT qntvaga FROM Equipe";
                 $result = $conexao->query($sql); //query-pedido de uma informação ou de um dado.
 
+<<<<<<< HEAD
               
 
                 while($dados = mysqli_fetch_Array($result))
@@ -103,6 +130,15 @@
      
                 }
                 echo("A vaga gerada foi $gera");   
+=======
+                while($dados = mysqli_fetch_Array($result))
+                {
+                    $numero = $dados['qntvaga'];
+                    $gera = rand(1, $numero); // rand - função que gera números  aleatórios 
+                                
+                }
+                echo("A vaga gerada foi $gera");     
+>>>>>>> 70dd13611c1f5bed4c3bdaeb0f3d17dbdf5d238f
            ?>
           </div>
           <section class="content">
